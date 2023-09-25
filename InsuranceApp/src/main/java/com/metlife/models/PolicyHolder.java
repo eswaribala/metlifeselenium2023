@@ -8,6 +8,9 @@ public class PolicyHolder {
     private LocalDate toDate;
     private FullName name;
     private Gender gender;
+    private LocalDate dob;
+    private String email;
+    private Address address;
 
 
 
