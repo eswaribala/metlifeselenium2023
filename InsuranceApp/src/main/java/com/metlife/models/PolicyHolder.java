@@ -7,7 +7,7 @@ public class PolicyHolder {
     private LocalDate fromDate;
     private LocalDate toDate;
     private FullName name;
-
+    private Gender gender;
 
 
 
