@@ -3,6 +3,7 @@ import java.time.LocalDate;
 
 public class PolicyHolder {
     //properties
+    //primitive data types
     private long policyNo;
     private LocalDate fromDate;
     private LocalDate toDate;
@@ -11,7 +12,7 @@ public class PolicyHolder {
     private LocalDate dob;
     private String email;
     private Address address;
-
+    private long phoneNo;
 
 
 }
