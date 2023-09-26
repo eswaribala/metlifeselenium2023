@@ -24,19 +24,21 @@ class InsuranceApp
         boolean active=true;*/
 
 
-       System.out.println("Rocking with java....");
+     /*  System.out.println("Rocking with java....");
 
+        //read values from keyboard
+        Scanner scanner=new Scanner(System.in);
        //create object for the policyholder
        //left side
         //datatype, referencevariable
         //right side
         //new --> to create the object
         //default constructor Class Name with rounded bracker
+
        PolicyHolder policyHolder=new PolicyHolder();
       //object Id
        System.out.println(policyHolder);
-       //read values from keyboard
-       Scanner scanner=new Scanner(System.in);
+
        //read policyno
         System.out.println("Enter Policy No");
         policyHolder.setPolicyNo(scanner.nextInt());
@@ -53,6 +55,11 @@ class InsuranceApp
         System.out.println("Enter Last Name");
         fullName.setLastName(scanner.nextLine());
         policyHolder.setName(fullName);
+
+        //display the full name
+        System.out.println(policyHolder.getName().getFirstName()+"-"+policyHolder.getName().getMiddleName()
+                +"-"+policyHolder.getName().getLastName());
+*/
 
 
 

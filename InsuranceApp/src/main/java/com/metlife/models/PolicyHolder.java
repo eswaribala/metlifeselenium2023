@@ -1,9 +1,12 @@
 package com.metlife.models;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDate;
 
-@Data
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class PolicyHolder {
     //properties
     //primitive data types
