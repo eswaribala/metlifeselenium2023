@@ -6,7 +6,7 @@ import java.time.LocalDate;
 @Getter
 //@AllArgsConstructor
 @NoArgsConstructor
-@ToString
+
 //policyholder inheriting properties of person
 public class PolicyHolder  extends Person{
     //properties
@@ -27,5 +27,16 @@ public class PolicyHolder  extends Person{
         this.policyNo = policyNo;
         this.fromDate = fromDate;
         this.toDate = toDate;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+    private static int visitorCount;
+
+    static{
+        visitorCount++;
+        System.out.println("Super class Static Block with visitorCount="+visitorCount);
     }
 }
