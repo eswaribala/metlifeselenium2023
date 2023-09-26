@@ -1,6 +1,7 @@
 package com.metlife;
 
 
+import com.metlife.models.FullName;
 import com.metlife.models.PolicyHolder;
 
 import java.util.Scanner;
@@ -42,6 +43,17 @@ class InsuranceApp
         scanner.nextLine();
         //show the policy no
         System.out.println("Policy No="+policyHolder.getPolicyNo());
+
+        //firstname,middle name and lastname
+        FullName fullName=new FullName();
+        System.out.println("Enter First Name");
+        fullName.setFirstName(scanner.nextLine());
+        System.out.println("Enter Middle Name");
+        fullName.setMiddleName(scanner.nextLine());
+        System.out.println("Enter Last Name");
+        fullName.setLastName(scanner.nextLine());
+        policyHolder.setName(fullName);
+
 
 
 

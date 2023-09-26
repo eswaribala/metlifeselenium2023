@@ -1,0 +1,5 @@
+com\metlife\models\Gender.class
+com\metlife\models\PolicyHolder.class
+com\metlife\InsuranceApp.class
+com\metlife\models\Address.class
+com\metlife\models\FullName.class
