@@ -3,6 +3,8 @@ package com.metlife;
 
 import com.metlife.models.PolicyHolder;
 
+import java.util.Scanner;
+
 class InsuranceApp
 {
     public static void main( String[] args )
@@ -29,10 +31,23 @@ class InsuranceApp
         //right side
         //new --> to create the object
         //default constructor Class Name with rounded bracker
-
-        PolicyHolder policyHolder=new PolicyHolder();
+       PolicyHolder policyHolder=new PolicyHolder();
       //object Id
        System.out.println(policyHolder);
+       //read values from keyboard
+       Scanner scanner=new Scanner(System.in);
+       //read policyno
+        System.out.println("Enter Policy No");
+        policyHolder.setPolicyNo(scanner.nextInt());
+        scanner.nextLine();
+        //show the policy no
+        System.out.println("Policy No="+policyHolder.getPolicyNo());
+
+
+
+
+
+
 
 
     }
