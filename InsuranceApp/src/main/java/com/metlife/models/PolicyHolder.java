@@ -4,7 +4,7 @@ import lombok.*;
 import java.time.LocalDate;
 
 @Getter
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 //policyholder inheriting properties of person
@@ -15,5 +15,17 @@ public class PolicyHolder  extends Person{
     private LocalDate fromDate;
     private LocalDate toDate;
 
+    public PolicyHolder(long policyNo, LocalDate fromDate, LocalDate toDate,FullName name, Gender gender, LocalDate dob, String email,
+                        Address address,long phoneNo) {
+        super(name, gender, dob, email, address, phoneNo);
+        this.policyNo = policyNo;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+    }
 
+    public PolicyHolder(long policyNo, LocalDate fromDate, LocalDate toDate) {
+        this.policyNo = policyNo;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+    }
 }
