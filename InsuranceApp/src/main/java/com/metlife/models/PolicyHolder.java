@@ -37,6 +37,11 @@ public class PolicyHolder  extends Person{
 
     static{
         visitorCount++;
-        System.out.println("Super class Static Block with visitorCount="+visitorCount);
+        System.out.println("Sub class Static Block with visitorCount="+visitorCount);
+    }
+
+    //instance block
+    {
+        System.out.println("Policyholder Instance Block"+email);
     }
 }

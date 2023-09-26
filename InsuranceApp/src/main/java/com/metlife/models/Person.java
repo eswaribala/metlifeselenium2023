@@ -11,17 +11,25 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 public class Person {
-    private FullName name;
-    private Gender gender;
-    private LocalDate dob;
-    private String email;
-    private Address address;
-    private long phoneNo;
+    protected FullName name;
+    protected Gender gender;
+    protected LocalDate dob;
+    protected String email; //inherited property
+    protected Address address;
+    protected long phoneNo;
+    //static cannot be inherited
     private static int visitorCount; //static variable
 //static block
     static{
         visitorCount++;
         System.out.println("Super class Static Block with visitorCount="+visitorCount);
     }
+
+    //instance block
+    {
+        System.out.println("Person Instance Block"+email);
+    }
+
+
 
 }
