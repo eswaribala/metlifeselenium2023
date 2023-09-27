@@ -34,12 +34,12 @@ public class PolicyHolder  extends Person{
 
     static{
         visitorCount++;
-        System.out.println("Sub class Static Block with visitorCount="+visitorCount);
+       // System.out.println("Sub class Static Block with visitorCount="+visitorCount);
     }
 
     //instance block
     {
-        System.out.println("Policyholder Instance Block"+email);
+       // System.out.println("Policyholder Instance Block"+email);
     }
 
     //method name, no of parameters, types of parameters and return type should be same

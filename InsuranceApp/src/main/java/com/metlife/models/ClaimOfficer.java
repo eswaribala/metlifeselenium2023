@@ -38,4 +38,8 @@ public class ClaimOfficer extends Employee{
                 return false;
         }
 
+    @Override
+    public void display() {
+
+    }
 }

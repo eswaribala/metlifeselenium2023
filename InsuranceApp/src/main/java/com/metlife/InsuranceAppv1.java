@@ -38,6 +38,8 @@ public class InsuranceAppv1 {
 
       //  Person personObj=new Person();
 
+        //create object
+        //Report report=new Report();
 
 
     }
