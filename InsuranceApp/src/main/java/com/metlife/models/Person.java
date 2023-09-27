@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Person {
+abstract public class Person {
     protected FullName name;
     protected Gender gender;
     protected LocalDate dob;

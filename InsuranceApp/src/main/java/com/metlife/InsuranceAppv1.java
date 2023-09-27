@@ -34,6 +34,11 @@ public class InsuranceAppv1 {
        System.out.println("Approval Status="+claimOfficer.claimApproval(policyHolder));
 
 
+       //test abstract class
+
+      //  Person personObj=new Person();
+
+
 
     }
 

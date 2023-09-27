@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee extends Person{
+abstract public class Employee extends Person{
 
     private long employeeNo;
     private String projectName;
