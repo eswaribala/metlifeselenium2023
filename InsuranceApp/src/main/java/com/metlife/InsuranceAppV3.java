@@ -7,13 +7,14 @@ import com.metlife.models.PolicyHolder;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
 public class InsuranceAppV3 {
 
     public static void main(String[] args){
-          //100 policyholders
+          //100 policyholders and sort them by policyno
         //array list
         ArrayList<PolicyHolder> policyHolders=new ArrayList<PolicyHolder>();
         Scanner scanner=new Scanner(System.in);
@@ -40,7 +41,13 @@ public class InsuranceAppV3 {
             System.out.println(policyHolder.getPolicyNo()+","+policyHolder.getFromDate().toString()+","+policyHolder.getToDate().toString());
         }
 
+        Collections.sort(policyHolders);
 
+        System.out.println("After Sorting..........................");
+        //display 100 policy holders
+        for(PolicyHolder policyHolder:policyHolders){
+            System.out.println(policyHolder.getPolicyNo()+","+policyHolder.getFromDate().toString()+","+policyHolder.getToDate().toString());
+        }
 
 
 
