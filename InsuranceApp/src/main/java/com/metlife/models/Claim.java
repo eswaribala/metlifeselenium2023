@@ -8,5 +8,4 @@ public class Claim {
     private Vehicle vehicle;
 
 
-
 }

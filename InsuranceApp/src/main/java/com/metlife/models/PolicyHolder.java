@@ -29,10 +29,7 @@ public class PolicyHolder  extends Person{
         this.toDate = toDate;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+
     private static int visitorCount;
 
     static{
@@ -43,5 +40,14 @@ public class PolicyHolder  extends Person{
     //instance block
     {
         System.out.println("Policyholder Instance Block"+email);
+    }
+
+    //method name, no of parameters, types of parameters and return type should be same
+    @Override
+    public void display() {
+        super.display();
+        System.out.println("PolicyNo"+this.getPolicyNo());
+        System.out.println("From Date="+this.fromDate.toString());
+
     }
 }

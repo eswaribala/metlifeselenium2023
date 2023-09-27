@@ -21,6 +21,12 @@ public class InsuranceAppv1 {
                         );
 
         System.out.println(policyHolder);
+        policyHolder.display();
+
+        //runtime polymorphism or upcasting
+        Person person=policyHolder;
+        person.display();
+
 
         //invoke ClaimOfficer
 
