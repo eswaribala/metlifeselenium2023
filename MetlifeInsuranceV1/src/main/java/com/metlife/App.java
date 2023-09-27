@@ -1,6 +1,6 @@
 package com.metlife;
 
-//import com.metlife.facades.PolicyHolderSorter;
+import com.metlife.facades.PolicyHolderSorter;
 import com.metlife.models.Address;
 import com.metlife.models.FullName;
 import com.metlife.models.Gender;
@@ -10,11 +10,14 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Random;
 
-public class InsuranceAppv2 {
-
-    public static void main(String[] args){
-
-           // generate 100 policyholders and sort them by to date without modifying existing class
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
 
         PolicyHolder[] policyHolders=new PolicyHolder[100];
 
@@ -40,12 +43,11 @@ public class InsuranceAppv2 {
 
         System.out.println("After Sorting..........................");
 
-        //Arrays.sort(policyHolders,new PolicyHolderSorter());
+        Arrays.sort(policyHolders,new PolicyHolderSorter());
 
-       /* for(PolicyHolder policyHolder:policyHolders){
+        for(PolicyHolder policyHolder:policyHolders){
             System.out.println(policyHolder.getPolicyNo()+","+policyHolder.getFromDate().toString()+","+policyHolder.getToDate().toString());
-        }*/
-
+        }
 
 
     }

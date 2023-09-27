@@ -1,5 +1,15 @@
 com\metlife\models\Gender.class
-com\metlife\models\PolicyHolder.class
 com\metlife\InsuranceApp.class
 com\metlife\models\Address.class
+com\metlife\models\Person.class
+com\metlife\models\Fuel.class
+com\metlife\InsuranceAppv2.class
+com\metlife\models\Report.class
+com\metlife\InsuranceAppv1.class
+com\metlife\models\Loss.class
+com\metlife\models\Claim.class
+com\metlife\models\Vehicle.class
+com\metlife\models\Employee.class
+com\metlife\models\ClaimOfficer.class
+com\metlife\models\PolicyHolder.class
 com\metlife\models\FullName.class
