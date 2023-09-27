@@ -45,7 +45,7 @@ public class PolicyHolder  extends Person{
     //method name, no of parameters, types of parameters and return type should be same
     @Override
     public void display() {
-        super.display();
+       System.out.println("FullName="+this.name.getFirstName()+"-"+this.name.getMiddleName()+"-"+this.name.getLastName());
         System.out.println("PolicyNo"+this.getPolicyNo());
         System.out.println("From Date="+this.fromDate.toString());
 

@@ -31,11 +31,6 @@ abstract public class Person {
     }
 
 
-    public void display(){
-        System.out.println("FullName="+name.getFirstName()+"-"+name.getMiddleName()+"-"+name.getLastName());
-        System.out.println("Address"+address.getCity());
-        System.out.println("PhoneNo"+phoneNo);
-    }
-
+    public abstract void display();
 
 }
