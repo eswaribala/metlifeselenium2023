@@ -8,7 +8,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 
 //policyholder inheriting properties of person
-public class PolicyHolder  extends Person implements Comparable{
+public class PolicyHolder  extends Person {
+        //implements Comparable{
     //properties
     //primitive data types
     private long policyNo;
@@ -51,10 +52,10 @@ public class PolicyHolder  extends Person implements Comparable{
 
     }
 
-    @Override
+   /* @Override
     public int compareTo(Object o) {
         PolicyHolder policyHolder= (PolicyHolder) o;
         return this.getToDate().compareTo(policyHolder.getToDate());
 
-    }
+    }*/
 }
