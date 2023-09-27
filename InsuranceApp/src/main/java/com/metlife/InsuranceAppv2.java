@@ -6,6 +6,7 @@ import com.metlife.models.Gender;
 import com.metlife.models.PolicyHolder;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Random;
 
 public class InsuranceAppv2 {
@@ -30,15 +31,19 @@ public class InsuranceAppv2 {
 
         }
 
-
+        System.out.println("Before Sorting..........................");
         //display 100 policy holders
         for(PolicyHolder policyHolder:policyHolders){
             System.out.println(policyHolder.getPolicyNo()+","+policyHolder.getFromDate().toString()+","+policyHolder.getToDate().toString());
         }
 
+        System.out.println("After Sorting..........................");
 
+        Arrays.sort(policyHolders);
 
-
+        for(PolicyHolder policyHolder:policyHolders){
+            System.out.println(policyHolder.getPolicyNo()+","+policyHolder.getFromDate().toString()+","+policyHolder.getToDate().toString());
+        }
 
 
 
