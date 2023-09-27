@@ -1,9 +1,6 @@
 package com.metlife;
 
-import com.metlife.models.Address;
-import com.metlife.models.FullName;
-import com.metlife.models.Gender;
-import com.metlife.models.PolicyHolder;
+import com.metlife.models.*;
 
 import java.time.LocalDate;
 import java.util.Random;
@@ -24,6 +21,13 @@ public class InsuranceAppv1 {
                         );
 
         System.out.println(policyHolder);
+
+        //invoke ClaimOfficer
+
+        ClaimOfficer claimOfficer=new ClaimOfficer();
+       System.out.println("Approval Status="+claimOfficer.claimApproval(policyHolder));
+
+
 
     }
 
