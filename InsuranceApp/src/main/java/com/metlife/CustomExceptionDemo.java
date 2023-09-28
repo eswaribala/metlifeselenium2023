@@ -4,21 +4,36 @@ import com.metlife.exceptions.DOBException;
 import com.metlife.models.FullName;
 import com.metlife.models.PolicyHolder;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class CustomExceptionDemo {
 
-    public static void main(String[] args){
+    public static void main(String[] args)  {
         FullName fullName=new FullName();
         fullName.setFirstName("Parameswari");
+        File file=new File("db.txt");
+        FileWriter fileWriter=null;
 
         PolicyHolder policyHolder=new PolicyHolder();
         try {
-            checkDOB(LocalDate.now().plusDays(10),policyHolder);
+            fileWriter=new FileWriter(file);
+            checkDOB(LocalDate.now().minusDays(10),policyHolder);
             System.out.println(policyHolder.getDob().toString());
+
         }
-        catch (DOBException ex){
+        catch (DOBException | IOException ex){
            System.out.println(ex.getMessage());
+        }
+        finally{
+            try {
+                fileWriter.close();
+            } catch (IOException e) {
+             System.out.println(e.getMessage());
+            }
+            System.out.println("File Closed");
         }
 
     }
