@@ -14,15 +14,20 @@ public class CustomExceptionDemo {
 
         PolicyHolder policyHolder=new PolicyHolder();
         try {
-            if (LocalDate.now().plusDays(10).isAfter(LocalDate.now()))
-                throw new DOBException("Date of Birth cannot be after current Date");
-            else
-                policyHolder.setDob(LocalDate.now().plusDays(10));
+            checkDOB(LocalDate.now().plusDays(10),policyHolder);
             System.out.println(policyHolder.getDob().toString());
         }
         catch (DOBException ex){
            System.out.println(ex.getMessage());
         }
 
+    }
+
+    private static void checkDOB(LocalDate date, PolicyHolder policyHolder) throws DOBException {
+
+        if (date.isAfter(LocalDate.now()))
+            throw new DOBException("Date of Birth cannot be after current Date");
+        else
+            policyHolder.setDob(date);
     }
 }
