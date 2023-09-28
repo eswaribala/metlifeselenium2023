@@ -51,7 +51,7 @@ public class PolicyHolder  extends Person implements Comparable{
 
     }
 
-    @Override
+  /*  @Override
     public int compareTo(Object o) {
         PolicyHolder policyHolder= (PolicyHolder) o;
         if(this.policyNo>policyHolder.getPolicyNo())
@@ -62,6 +62,14 @@ public class PolicyHolder  extends Person implements Comparable{
         }
         else
             return 0;
+
+
+    }*/
+
+    @Override
+    public int compareTo(Object o) {
+        PolicyHolder policyHolder= (PolicyHolder) o;
+        return this.fromDate.compareTo(policyHolder.fromDate);
 
 
     }
