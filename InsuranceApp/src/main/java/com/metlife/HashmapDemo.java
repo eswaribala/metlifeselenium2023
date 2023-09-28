@@ -39,10 +39,13 @@ public class HashmapDemo {
             System.out.println(entry.getKey()+","+entry.getValue().getFromDate()+","+entry.getValue().getToDate());
 
         }
-
-
-
-
+     //search for the value
+        Scanner scanner =new Scanner(System.in);
+        System.out.println("Enter the key");
+        long key = scanner.nextLong();
+        scanner.nextLine();
+       PolicyHolder policyHolder= policyHolderHashMap.get(key);
+        System.out.println(policyHolder.getPolicyNo()+","+policyHolder.getFromDate()+","+policyHolder.getToDate());
 
     }
 }
