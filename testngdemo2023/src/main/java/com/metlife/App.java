@@ -5,6 +5,7 @@ import com.metlife.dao.AppDao;
 import com.metlife.models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 
@@ -50,6 +51,10 @@ public class App
         webDriver.findElement(By.name("userName")).sendKeys(user.getUserName());
         webDriver.findElement(By.name("password")).sendKeys(user.getPassword());
         webDriver.findElement(By.name("submit")).click();
+       WebElement webElement= webDriver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[3]/td[2]/span"));
+
+       assertEquals("Enter your userName and password correct",  webElement.getText());
+
     }
 
 
