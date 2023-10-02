@@ -10,7 +10,7 @@ import java.util.Random;
 public class AppDao {
 
 
-    public static Iterator<User> generateUsers(){
+    public static List<User> generateUsers(){
 
         List<User> users=new ArrayList<User>();
 
@@ -18,7 +18,7 @@ public class AppDao {
             users.add(new User("user"+i,"pass"+new Random().nextInt(100000)));
         }
 
-        return users.iterator();
+        return users;
 
     }
 
