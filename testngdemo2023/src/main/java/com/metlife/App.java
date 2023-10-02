@@ -6,13 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
-/**
- * Hello world!
- *
- */
-public class App 
+
+public class App
 {
 
 
