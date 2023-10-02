@@ -51,8 +51,7 @@ public class App
         webDriver.findElement(By.xpath("//input[@name='userName']")).sendKeys(user.getUserName());
         webDriver.findElement(By.xpath("//input[@name='password']")).sendKeys(user.getPassword());
         webDriver.findElement(By.xpath("//input[@name='submit']")).click();
-       WebElement webElement= webDriver.findElement(By.xpath("//*[@type='password']//child::span"));
-
+       WebElement webElement= webDriver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[3]/td[2]/span"));
        assertEquals("Enter your userName and password correct",  webElement.getText());
 
     }
