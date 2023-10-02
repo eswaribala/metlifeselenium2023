@@ -48,10 +48,10 @@ public class App
     public void testLoginForm(User user){
 
         webDriver.get("https://demo.guru99.com/test/newtours/");
-        webDriver.findElement(By.name("userName")).sendKeys(user.getUserName());
-        webDriver.findElement(By.name("password")).sendKeys(user.getPassword());
-        webDriver.findElement(By.name("submit")).click();
-       WebElement webElement= webDriver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[3]/td[2]/span"));
+        webDriver.findElement(By.xpath("//input[@name='userName']")).sendKeys(user.getUserName());
+        webDriver.findElement(By.xpath("//input[@name='password']")).sendKeys(user.getPassword());
+        webDriver.findElement(By.xpath("//input[@name='submit']")).click();
+       WebElement webElement= webDriver.findElement(By.xpath("//*[@type='password']//child::span"));
 
        assertEquals("Enter your userName and password correct",  webElement.getText());
 
@@ -59,7 +59,7 @@ public class App
 
 
 
-   /* @DataProvider(name = "userData")
+   @DataProvider(name = "userData")
     public Object[][] fetchData(){
         List<User> users=AppDao.generateUsers();
         Object[][] objArray=new Object[users.size()][];
@@ -68,10 +68,10 @@ public class App
           objArray[i][0]=users.get(i);       }
        return objArray;
 
-    }*/
+    }
 
-    @DataProvider(name = "userData")
-    public Iterator<User> fetchData(){
+    @DataProvider(name = "userData12")
+    public Iterator<User> fetchData12(){
 
         return AppDao.generateUsers().iterator();
 
