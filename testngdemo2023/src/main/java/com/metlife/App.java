@@ -54,7 +54,7 @@ public class App
 
 
 
-    @DataProvider(name = "userData")
+   /* @DataProvider(name = "userData")
     public Object[][] fetchData(){
         List<User> users=AppDao.generateUsers();
         Object[][] objArray=new Object[users.size()][];
@@ -63,7 +63,13 @@ public class App
           objArray[i][0]=users.get(i);       }
        return objArray;
 
-    }
+    }*/
 
+    @DataProvider(name = "userData")
+    public Iterator<User> fetchData(){
+
+        return AppDao.generateUsers().iterator();
+
+    }
 
 }

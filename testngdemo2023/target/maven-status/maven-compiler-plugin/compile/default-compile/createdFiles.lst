@@ -1,0 +1,3 @@
+com\metlife\App.class
+com\metlife\models\User.class
+com\metlife\dao\AppDao.class
