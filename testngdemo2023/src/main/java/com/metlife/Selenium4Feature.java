@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -57,8 +58,17 @@ public class Selenium4Feature {
         webElement=webDriver.findElement(By.xpath("//label[starts-with(@id,'message')]"));
         assertTrue(webElement.getAttribute("id").contains("message"));
 
-
     }
+
+    @Test
+    public void testXpathTable(){
+        webDriver.get("https://www.livechennai.com/gold_silverrate.asp");
+        List<WebElement> cols=webDriver.findElements(By.xpath("/html/body/div[2]/div[1]/table[1]/tbody/tr/td/div[2]/table/tbody/tr[3]"));
+
+        System.out.println(cols.size());
+    }
+
+
 
 
 
