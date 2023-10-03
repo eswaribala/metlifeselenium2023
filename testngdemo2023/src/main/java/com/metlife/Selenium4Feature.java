@@ -82,6 +82,9 @@ public class Selenium4Feature {
     @Test
     public void testObjectLocation(){
 
+        JavascriptExecutor javascriptExecutor= (JavascriptExecutor) webDriver;
+        //100%=1, 150%=1.5
+        javascriptExecutor.executeScript("document.body.style.zoom='1'");
         webDriver.get("https://www.canada411.ca/");
         webElement=webDriver.findElement(By.xpath("//a[contains(@title,'Find a Business')]"));
 
