@@ -54,7 +54,8 @@ public class App
         webDriver.findElement(By.xpath("//input[@name='userName']")).sendKeys(user.getUserName());
         webDriver.findElement(By.xpath("//input[@name='password']")).sendKeys(user.getPassword());
         webDriver.findElement(By.xpath("//input[@name='submit']")).click();
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofMillis(5000));
+        //explicit wait
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
         WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Enter your userName and password correct')]")));
        System.out.println(webElement.getText());
        assertEquals("Enter your userName and password correct",  webElement.getText());
