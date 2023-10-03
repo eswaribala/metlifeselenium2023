@@ -12,7 +12,9 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class Selenium4Fetaure {
+import static org.testng.Assert.assertTrue;
+
+public class Selenium4Feature {
 
     private WebDriver webDriver;
     private WebElement webElement;
@@ -28,11 +30,20 @@ public class Selenium4Fetaure {
 
     @Test
     public void testScreenshot() throws IOException {
-
         webElement=webDriver.findElement (By.xpath("//img[contains(@src,'images/featured_destination.gif')]"));
         srcFile= webElement.getScreenshotAs(OutputType.FILE);
-        destFile=new File("ariba.jpg");
+        destFile=new File("images","ariba.jpg");
         FileUtils.copyFile(srcFile,destFile);
+
+    }
+
+    @Test
+    public void testOrXpath(){
+
+        webElement=webDriver.findElement(By.xpath("//*[@href='index.php' or @type='text']"));
+        String name=webElement.getTagName();
+        System.out.println(name);
+        assertTrue(name.equals("a"));
 
 
     }
