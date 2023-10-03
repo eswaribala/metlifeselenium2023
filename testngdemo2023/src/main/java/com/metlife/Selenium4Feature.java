@@ -63,7 +63,7 @@ public class Selenium4Feature {
     @Test
     public void testXpathTable(){
         webDriver.get("https://www.livechennai.com/gold_silverrate.asp");
-        List<WebElement> cols=webDriver.findElements(By.xpath("/html/body/div[2]/div[1]/table[1]/tbody/tr/td/div[2]/table/tbody/tr[3]"));
+        List<WebElement> cols=webDriver.findElements(By.xpath("/html/body/div[2]/div[1]/table[1]/tbody/tr/td/div[2]/table/tbody/tr[3]/td"));
 
         System.out.println(cols.size());
     }
