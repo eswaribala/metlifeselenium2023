@@ -26,11 +26,12 @@ public class Selenium4Feature {
     public void setup(){
         baseUrl="https://demo.guru99.com/test/newtours/index.php";
         webDriver=new ChromeDriver();
-        webDriver.get(baseUrl);
+
     }
 
     @Test
     public void testScreenshot() throws IOException {
+        webDriver.get(baseUrl);
         webElement=webDriver.findElement (By.xpath("//img[contains(@src,'images/featured_destination.gif')]"));
         srcFile= webElement.getScreenshotAs(OutputType.FILE);
         destFile=new File("images","ariba.jpg");
@@ -78,9 +79,16 @@ public class Selenium4Feature {
     }
 
 
+    @Test
+    public void testObjectLocation(){
 
+        webDriver.get("https://www.canada411.ca/");
+        webElement=webDriver.findElement(By.xpath("//a[contains(@title,'Find a Business')]"));
 
+        System.out.println(webElement.getRect().x+","+webElement.getRect().y+
+                ","+webElement.getRect().getDimension().height+","+webElement.getRect().getDimension().width);
 
+    }
 
 
 }
