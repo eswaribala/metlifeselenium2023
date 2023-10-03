@@ -1,16 +1,15 @@
 package com.metlife;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -63,15 +62,22 @@ public class Selenium4Feature {
     @Test
     public void testXpathTable(){
         webDriver.get("https://www.livechennai.com/gold_silverrate.asp");
-
         List<WebElement> cols=webDriver.findElements(By.xpath("//*/div[2]/table[@class='table-price']/tbody/tr[3]/td"));
-
-        System.out.println(cols.size());
-
+        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MMMM/YYYY");
+        assertTrue(formatter.format(LocalDate.now()).equals(cols.get(0).getText()));
         for(WebElement webElement1:cols){
             System.out.println(webElement1.getText());
         }
     }
+
+    @Test
+    public void testOpenTab(){
+        webDriver.get("https://www.livechennai.com/gold_silverrate.asp");
+        webDriver.switchTo().newWindow(WindowType.TAB);
+        webDriver.navigate().to("https://www.canada411.ca/");
+    }
+
+
 
 
 
