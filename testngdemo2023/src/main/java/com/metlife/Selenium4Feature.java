@@ -1,5 +1,5 @@
 package com.metlife;
-
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -92,6 +92,22 @@ public class Selenium4Feature {
                 ","+webElement.getRect().getDimension().height+","+webElement.getRect().getDimension().width);
 
     }
+
+
+    @Test
+    public void testRelativeLocators(){
+
+        webDriver.get("https://demo.guru99.com/V1/index.php");
+        webElement=webDriver.findElement(By.xpath("//input[@name='uid']"));
+        System.out.println(webElement.getTagName());
+
+        WebElement lblElement = webDriver.findElement(with(By.tagName("td")).toLeftOf(webElement));
+        System.out.println(lblElement.getTagName());
+
+
+    }
+
+
 
 
 }
