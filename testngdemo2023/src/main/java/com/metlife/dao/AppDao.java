@@ -14,7 +14,7 @@ public class AppDao {
 
         List<User> users=new ArrayList<User>();
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<5;i++){
             users.add(new User("user"+i,"pass"+new Random().nextInt(100000)));
         }
 

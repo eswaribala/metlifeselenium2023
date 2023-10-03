@@ -7,11 +7,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -45,13 +48,15 @@ public class App
 
 
     @Test(dataProvider = "userData")
-    public void testLoginForm(User user){
+    public void testLoginForm(User user)  {
 
-        webDriver.get("https://demo.guru99.com/test/newtours/");
+        webDriver.get("https://demo.guru99.com/test/newtours/index.php");
         webDriver.findElement(By.xpath("//input[@name='userName']")).sendKeys(user.getUserName());
         webDriver.findElement(By.xpath("//input[@name='password']")).sendKeys(user.getPassword());
         webDriver.findElement(By.xpath("//input[@name='submit']")).click();
-       WebElement webElement= webDriver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[3]/td[2]/span"));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofMillis(5000));
+        WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Enter your userName and password correct')]")));
+       System.out.println(webElement.getText());
        assertEquals("Enter your userName and password correct",  webElement.getText());
 
     }
