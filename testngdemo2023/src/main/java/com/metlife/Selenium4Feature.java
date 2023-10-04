@@ -175,6 +175,8 @@ public class Selenium4Feature {
        for(WebElement webElement1 :webElements)
         System.out.println(webElement1.getText());
 
+       assertEquals(10,webElements.size());
+
     }
 
 
