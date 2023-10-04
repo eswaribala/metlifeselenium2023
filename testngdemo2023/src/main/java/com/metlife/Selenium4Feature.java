@@ -150,12 +150,13 @@ public class Selenium4Feature {
 
         webDriver=new ChromeDriver();
         webDriver.get("http://localhost:63343/hsbcuitraining2023/bankapp/showusers.html");
-        webElement=webDriver.findElement(By.xpath("/html/body/button"));
+        webElement=webDriver.findElement(By.xpath("//button"));
         webElement.click();
         //selenium4
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
        //read the data from console
-       LogEntries logEntries= webDriver.manage().logs().get(LogType.DRIVER);
+       LogEntries logEntries= webDriver.manage().logs().get(LogType.BROWSER);
+
        List<LogEntry> logEntryList=logEntries.getAll();
        for(LogEntry logEntry:logEntryList){
            System.out.println(logEntry);
