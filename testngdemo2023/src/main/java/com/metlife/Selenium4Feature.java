@@ -169,10 +169,11 @@ public class Selenium4Feature {
        for(LogEntry logEntry:logEntryList){
            System.out.println(logEntry);
        }
+        //webElement=webDriver.findElement(By.xpath("//*[@id='output']/p[1]"));
 
-        webElement=webDriver.findElement(By.xpath("//*[@id='output']/p[1]"));
-
-       System.out.println(webElement.getText());
+       List<WebElement> webElements=webDriver.findElements(By.cssSelector("p"));
+       for(WebElement webElement1 :webElements)
+        System.out.println(webElement1.getText());
 
     }
 
