@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -170,14 +172,30 @@ public class Selenium4Feature {
            System.out.println(logEntry);
        }
         //webElement=webDriver.findElement(By.xpath("//*[@id='output']/p[1]"));
-
        List<WebElement> webElements=webDriver.findElements(By.cssSelector("p"));
        for(WebElement webElement1 :webElements)
         System.out.println(webElement1.getText());
-
        assertEquals(10,webElements.size());
 
     }
 
+    @Test
+    public void testDragAndDrop(){
+
+        webDriver=new ChromeDriver();
+        Actions actions=new Actions(webDriver);
+        webDriver.get("https://jqueryui.com/droppable/");
+        WebDriverWait webDriverWait=new WebDriverWait(webDriver,Duration.ofSeconds(5));
+        webDriverWait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.className("demo-frame")));
+
+        WebElement src= webDriver.findElement(By.id("draggable"));
+        WebElement dest= webDriver.findElement(By.id("droppable"));
+
+        actions.dragAndDrop(src,dest).perform();
+
+
+
+
+    }
 
 }
