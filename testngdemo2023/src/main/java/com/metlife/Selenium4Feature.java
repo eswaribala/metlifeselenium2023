@@ -3,6 +3,7 @@ import static org.openqa.selenium.support.locators.RelativeLocator.with;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,6 +19,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -147,8 +149,14 @@ public class Selenium4Feature {
 
     @Test
     public void testAjaxCall(){
-
-        webDriver=new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        // options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36");
+        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+        options.setExperimentalOption("useAutomationExtension", false);
+        //options.addArguments("--headless");
+        options.addArguments("--disable-blink-features");
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        webDriver=new ChromeDriver(options);
         webDriver.get("http://localhost:63343/hsbcuitraining2023/bankapp/showusers.html");
         webElement=webDriver.findElement(By.xpath("//button"));
         webElement.click();
@@ -161,6 +169,8 @@ public class Selenium4Feature {
        for(LogEntry logEntry:logEntryList){
            System.out.println(logEntry);
        }
+
+        webElement=webDriver.findElement(By.xpath("//button"));
 
     }
 
