@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -126,17 +127,15 @@ public class Selenium4Feature {
     @Test
     public void testDynamicData(){
 
-        webDriver=new ChromeDriver();
+        webDriver=new FirefoxDriver();
         webDriver.get("https://www.bloomberg.com/markets/currencies");
         List<WebElement> betterElements=webDriver.findElements(By.xpath("//*[@data-type='better']"));
         List<WebElement> worseElements=webDriver.findElements(By.xpath("//*[@data-type='worse']"));
-
         boolean positive,negative=false;
-
         for(WebElement element:betterElements){
           System.out.println(element.getText());
-           // positive=element.getText().startsWith("+")||element.getText().startsWith("0");
-
+          positive=element.getText().startsWith("+")||element.getText().startsWith("0");
+          assertTrue(positive, "Positive"+element.getText());
         }
 
     }
