@@ -150,7 +150,7 @@ public class Selenium4Feature {
     @Test
     public void testAjaxCall(){
         ChromeOptions options = new ChromeOptions();
-        // options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36");
+        options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36");
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         options.setExperimentalOption("useAutomationExtension", false);
         //options.addArguments("--headless");
@@ -170,7 +170,9 @@ public class Selenium4Feature {
            System.out.println(logEntry);
        }
 
-        webElement=webDriver.findElement(By.xpath("//button"));
+        webElement=webDriver.findElement(By.xpath("//*[@id='output']/p[1]"));
+
+       System.out.println(webElement.getText());
 
     }
 
