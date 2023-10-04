@@ -16,7 +16,8 @@ window.addEventListener('load',function(){
             }
         }
 
-
+        let div=document.querySelector("#output");
+         ;
         ajaxObj.onreadystatechange=function(){
             //alert("State changed");
             let userArray;
@@ -27,7 +28,14 @@ window.addEventListener('load',function(){
 
                 userArray.forEach(x => {
                     console.log(x.name, x.phone);
+                    let element=document.createElement("p");
+                    let br=document.createElement("br")
+                    let textnode=document.createTextNode(x.name+","+x.phone);
+                    element.appendChild(textnode);
+                    div.appendChild(element);
+                    div.appendChild(br);
                 })
+
             }
         }
         ajaxObj.open("GET","https://jsonplaceholder.typicode.com/users",true);
