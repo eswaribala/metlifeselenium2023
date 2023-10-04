@@ -204,7 +204,7 @@ public class Selenium4Feature {
         webDriver=new ChromeDriver();
         webDriver.get("https://selenium08.blogspot.com/2020/01/click-and-hold.html");
         Actions actions=new Actions(webDriver);
-        webElement=webDriver.findElement(By.xpath("//li[@text()='C']"));
+        webElement=webDriver.findElement(By.xpath("//li[text()='C']"));
         actions.moveToElement(webElement);
         actions.clickAndHold().perform();
 
