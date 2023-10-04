@@ -7,11 +7,15 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -140,6 +144,24 @@ public class Selenium4Feature {
 
     }
 
+
+    @Test
+    public void testAjaxCall(){
+
+        webDriver=new ChromeDriver();
+        webDriver.get("http://localhost:63343/hsbcuitraining2023/bankapp/showusers.html");
+        webElement=webDriver.findElement(By.xpath("/html/body/button"));
+        webElement.click();
+        //selenium4
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+       //read the data from console
+       LogEntries logEntries= webDriver.manage().logs().get(LogType.DRIVER);
+       List<LogEntry> logEntryList=logEntries.getAll();
+       for(LogEntry logEntry:logEntryList){
+           System.out.println(logEntry);
+       }
+
+    }
 
 
 }
