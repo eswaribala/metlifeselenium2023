@@ -121,10 +121,25 @@ public class Selenium4Feature {
         System.out.println(webElement.getTagName());
         WebElement lblElement = webDriver.findElement(with(By.tagName("td")).toLeftOf(webElement));
         System.out.println(lblElement.getTagName());
-
-
     }
 
+    @Test
+    public void testDynamicData(){
+
+        webDriver=new ChromeDriver();
+        webDriver.get("https://www.bloomberg.com/markets/currencies");
+        List<WebElement> betterElements=webDriver.findElements(By.xpath("//*[@data-type='better']"));
+        List<WebElement> worseElements=webDriver.findElements(By.xpath("//*[@data-type='worse']"));
+
+        boolean positive,negative=false;
+
+        for(WebElement element:betterElements){
+          System.out.println(element.getText());
+           // positive=element.getText().startsWith("+")||element.getText().startsWith("0");
+
+        }
+
+    }
 
 
 
