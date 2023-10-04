@@ -1,9 +1,13 @@
 package com.metlife;
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
+import static org.testng.Assert.assertEquals;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -11,8 +15,13 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -32,7 +41,7 @@ public class App
     }
     @Test(dataProvider = "data")
     public void test(String d) {
-        Assert.assertEquals("First Line\nSecond Line", "First Line\nSecond Line");
+        assertEquals("First Line\nSecond Line", "First Line\nSecond Line");
     }
     //Instantiate the browser driver (e.g., ChromeDriver)
 
@@ -257,5 +266,302 @@ public class App
         System.out.println("X Location: " +logo.getRect().getX());
         System.out.println("Y Location: " +logo.getRect().getY());
     }
+
+
+    @Test
+    public void testDynamicData() throws MalformedURLException {
+        String baseUrl = "https://www.doordash.com/en-US";
+
+        ChromeOptions options = new ChromeOptions();
+       // options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36");
+        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+        options.setExperimentalOption("useAutomationExtension", false);
+        //options.addArguments("--headless");
+        options.addArguments("--disable-blink-features");
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        WebDriver webDriver = new ChromeDriver( options);
+        webDriver.manage().window().maximize();
+        webDriver.get(baseUrl);
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        List<WebElement> iframeElements = webDriver.findElements(By.tagName("iframe"));
+        System.out.println("Total number of iframes are " + iframeElements.size());
+        webDriver.switchTo().frame(0);
+        //webDriver.findElement(By.xpath("//*[@id='challenge-stage']/div/label/input")).click();
+        JavascriptExecutor javascriptExecutor= (JavascriptExecutor) webDriver;
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver.get(baseUrl);
+       javascriptExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight,)");
+
+    }
+
+    @Test
+    public void dynamicDatav1(){
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.get("https://www.bloomberg.com/markets/currencies");
+        List<WebElement> greenWebElementList = webDriver.findElements(By.xpath("//*[@data-type=\"better\"]"));
+        List<WebElement> redWebElementList = webDriver.findElements(By.xpath("//*[@data-type=\"worse\"]"));
+
+        for (WebElement greenWebElement : greenWebElementList) {
+            String greenCellText = greenWebElement.getText();
+            System.out.println("greenCellText: " + greenCellText);
+            boolean isPositive = greenCellText.startsWith("+") || greenCellText.startsWith("0");
+            Assert.assertTrue(isPositive, "green cell text: " + greenCellText);
+        }
+
+        for (WebElement redWebElement : redWebElementList) {
+            String redCellText = redWebElement.getText();
+            System.out.println("redCellText: " + redCellText);
+            boolean isNegative = redCellText.startsWith("-");
+            Assert.assertTrue(isNegative, "red cell text: " + redCellText);
+        }
+    }
+
+
+    @Test
+    public void testAjax(){
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.manage().window().maximize();
+        webDriver.navigate().to("http://demos.telerik.com/aspnet-ajax/ajax/examples/loadingpanel/explicitshowhide/defaultcs.aspx");
+        /*Wait for grid to appear*/
+        By container = By.cssSelector(".demo-container");
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.presenceOfElementLocated(container));
+
+        /*Get the text before performing an ajax call*/
+        WebElement noDatesTextElement = webDriver.findElement(By.xpath("//div[@class='RadAjaxPanel']/span"));
+        String textBeforeAjaxCall = noDatesTextElement.getText().trim();
+
+        /*Click on the date*/
+        webDriver.findElement(By.linkText("4")).click();
+
+        /*Wait for loader to disappear */
+        By loader = By.className("raDiv");
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(loader));
+
+        /*Get the text after ajax call*/
+        WebElement selectedDatesTextElement = webDriver.findElement(By.xpath("//div[@class='RadAjaxPanel']/span"));
+        wait.until(ExpectedConditions.visibilityOf(selectedDatesTextElement));
+        String textAfterAjaxCall = selectedDatesTextElement.getText().trim();
+
+        /*Verify both texts before ajax call and after ajax call text.*/
+        Assert.assertNotEquals(textBeforeAjaxCall, textAfterAjaxCall);
+
+        String expectedTextAfterAjaxCall = "Wednesday, October 4, 2023";
+
+        /*Verify expected text with text updated after ajax call*/
+        assertEquals(textAfterAjaxCall, expectedTextAfterAjaxCall);
+    }
+
+    @Test
+    public void testJSExecutorsClick(){
+
+        WebDriver driver=new ChromeDriver();
+        Actions action=new Actions(driver);
+        driver.get("https://www.facebook.com/");
+        WebElement element = driver.findElement(By.xpath("//*[@id='reg_pages_msg']/a"));
+        //click
+        action.moveToElement(element).click();
+
+
+    }
+    @Test
+    public void testJSExecutorsDragDrop(){
+
+        WebDriver driver=new ChromeDriver();
+        Actions action=new Actions(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        driver.get("https://jqueryui.com/droppable/");
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.className("demo-frame")));
+
+        WebElement source = driver.findElement(By.id("draggable"));
+        WebElement target = driver.findElement(By.id("droppable"));
+
+        action.dragAndDrop(source, target).perform();
+
+    }
+
+    @Test
+    public void testJSExecutorsClickAndHold(){
+
+        WebDriver driver=new ChromeDriver();
+        Actions actions=new Actions(driver);
+        String url = "https://selenium08.blogspot.com/2020/01/click-and-hold.html";
+        driver.get(url);
+// Locate the element C by By.xpath.
+        WebElement titleC = driver.findElement(By.xpath("//li[text()= 'C']"));
+
+// Move the cursor to the position of element C.
+        actions.moveToElement(titleC); // Call clickAndHold() method to perform click and hold operation.
+        actions.clickAndHold().perform();
+
+    }
+
+    @Test
+    public void testKeysUp(){
+        WebDriver driver=new ChromeDriver();
+        //Navigate to the demo site
+        driver.get("https://demoqa.com/text-box");
+
+        //Create object of the Actions class
+        Actions actions = new Actions(driver);
+
+
+        // Enter the Full Name
+        WebElement fullName = driver.findElement(By.id("userName"));
+        fullName.sendKeys("Mr.Peter Haynes");
+
+        //Enter the Email
+        WebElement email=driver.findElement(By.id("userEmail"));
+        email.sendKeys("PeterHaynes@toolsqa.com");
+
+
+        // Enter the Current Address
+        WebElement currentAddress=driver.findElement(By.id("currentAddress"));
+
+        currentAddress.sendKeys("43 School Lane London EC71 9GO");
+
+
+        // Select the Current Address using CTRL + A
+        actions.keyDown(Keys.CONTROL);
+        actions.sendKeys("a");
+        actions.keyUp(Keys.CONTROL);
+        actions.build().perform();
+
+        // Copy the Current Address using CTRL + C
+        actions.keyDown(Keys.CONTROL);
+        actions.sendKeys("c");
+        actions.keyUp(Keys.CONTROL);
+        actions.build().perform();
+
+        //Press the TAB Key to Switch Focus to Permanent Address
+        actions.sendKeys(Keys.TAB);
+        actions.build().perform();
+
+        //Paste the Address in the Permanent Address field using CTRL + V
+        actions.keyDown(Keys.CONTROL);
+        actions.sendKeys("v");
+        actions.keyUp(Keys.CONTROL);
+        actions.build().perform();
+
+
+        //Compare Text of current Address and Permanent Address
+        WebElement permanentAddress=driver.findElement(By.id("permanentAddress"));
+        assertEquals(currentAddress.getAttribute("value"),permanentAddress.getAttribute("value"));
+
+
+    }
+
+    @Test
+    public void alertWindow() throws Exception{
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://softwaretestingplace.blogspot.com/2017/03/javascript-alert-test-page.html");
+        driver.findElement(By.xpath("//*[@id='content']/button")).click();
+        Thread.sleep(3000);
+        Alert alert = driver.switchTo().alert();
+        String print = alert.getText();
+        System.out.println(print);
+        alert.accept();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id='content']/button")).click();
+        Thread.sleep(3000);
+        alert.dismiss();
+        driver.close();
+    }
+
+    @Test
+    public void testPopup(){
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+
+        //this is js alerts
+
+        driver.findElement(By.xpath("//button[@onclick='jsAlert()']")).click();
+
+        Alert alerts1 = driver.switchTo().alert();
+
+        System.out.println(alerts1.getText());
+
+        alerts1.accept();
+
+        if(driver.getPageSource().contains("sucessfully clicked an alert"))
+
+            System.out.println("sucessfully clicked an alert");
+
+
+        //this is js confirm
+
+        driver.findElement(By.xpath("//button[@onclick='jsConfirm()']")).click();
+
+        Alert alerts2 = driver.switchTo().alert();
+
+        System.out.println(alerts2.getText());
+
+        alerts2.dismiss();
+
+        if(driver.getPageSource().contains("you clicked: Cancel"))
+
+            System.out.println("you clicked: Cancel");
+
+
+        //js Prompt
+
+        driver.findElement(By.xpath("//button[@onclick='jsPrompt()']")).click();
+
+        Alert alerts3 = driver.switchTo().alert();
+
+        System.out.println(alerts3.getText());
+
+        alerts2.sendKeys("this is selenium 4");
+
+        alerts3.accept();
+
+        if(driver.getPageSource().contains("you entered: this is selenium 4"))
+
+            System.out.println("you entered: this is selenium 4");
+    }
+
+    @Test
+    public void testPlayVideo(){
+        WebDriver driver=new ChromeDriver();
+        driver.get("https://www.wonderplugin.com/wordpress-lightbox");
+        WebElement video = driver.findElement(By.tagName("video"));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].play();", video);
+    }
+
+   @Test
+    public void handleMultipleWindows(){
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+       driver.get("https://demoqa.com/browser-windows");
+       // Opening all the child window
+       driver.findElement(By.id("windowButton")).click();
+       driver.findElement(By.id("messageWindowButton")).click();
+
+       String MainWindow = driver.getWindowHandle();
+       System.out.println("Main window handle is " + MainWindow);
+
+       // To handle all new opened window
+       Set<String> s1 = driver.getWindowHandles();
+       System.out.println("Child window handle is" + s1);
+       Iterator<String> i1 = s1.iterator();
+
+       // Here we will check if child window has other child windows and when child window
+       //is the main window it will come out of loop.
+       while (i1.hasNext()) {
+           String ChildWindow = i1.next();
+           if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
+               driver.switchTo().window(ChildWindow);
+               driver.close();
+               System.out.println("Child window closed");
+           }
+       }
+   }
+
+
 
 }

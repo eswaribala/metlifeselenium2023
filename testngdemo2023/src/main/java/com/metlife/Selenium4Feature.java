@@ -3,6 +3,9 @@ import static org.openqa.selenium.support.locators.RelativeLocator.with;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -31,10 +34,26 @@ public class Selenium4Feature {
 
     @Test
     public void testScreenshot() throws IOException {
-        webDriver.get(baseUrl);
-        webElement=webDriver.findElement (By.xpath("//img[contains(@src,'images/featured_destination.gif')]"));
+        EdgeOptions options = new EdgeOptions();
+        options.addArguments("force-device-scale-factor=1.75");
+        options.addArguments("high-dpi-support=1.75");
+        WebDriver webDriver1=new EdgeDriver(options);
+        JavascriptExecutor javascriptExecutor= (JavascriptExecutor) webDriver1;
+        //javascriptExecutor.executeScript("window.scrollTo(0.5, document.body.scrollHeight,)");
+
+        //WebElement html = webDriver1.findElement(By.tagName("html"));
+       // html.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD)); zoom in
+      //  html.sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT)); //zoom out
+        webDriver1.get(baseUrl);
+       // webElement=webDriver1.findElement (By.xpath("//img[contains(@src,'images/featured_destination.gif')]"));
+        webElement=webDriver1.findElement (By.xpath("//*/table/tbody/tr[4]/td/table/tbody/tr/td[2]"));
+        javascriptExecutor.executeScript("window.scrollBy(2000,250)");
+        //javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", webElement);
+       // Actions actions = new Actions(webDriver1);
+      //  actions.moveToElement(webElement);
+       // actions.perform();
         srcFile= webElement.getScreenshotAs(OutputType.FILE);
-        destFile=new File("images","ariba.jpg");
+        destFile=new File("images","ariba1234.jpg");
         FileUtils.copyFile(srcFile,destFile);
 
     }
@@ -100,7 +119,6 @@ public class Selenium4Feature {
         webDriver.get("https://demo.guru99.com/V1/index.php");
         webElement=webDriver.findElement(By.xpath("//input[@name='uid']"));
         System.out.println(webElement.getTagName());
-
         WebElement lblElement = webDriver.findElement(with(By.tagName("td")).toLeftOf(webElement));
         System.out.println(lblElement.getTagName());
 
