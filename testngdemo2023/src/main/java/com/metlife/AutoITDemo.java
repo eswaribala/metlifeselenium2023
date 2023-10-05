@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -133,6 +134,34 @@ public class AutoITDemo {
     }
 
 
+    @Test
+    public void testMouseHover(){
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.lambdatest.com/automation-demos");
+        System.out.println("demoqa webpage Displayed");
+
+        //Maximise browser window
+        driver.manage().window().maximize();
+
+        //Adding wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        //Instantiate Action Class
+        Actions actions = new Actions(driver);
+        //Retrieve WebElement 'Music' to perform mouse hover
+        WebElement hoverElement1 = driver.findElement(By.xpath("//*[@id=\"header\"]/nav/div/div/div[2]/div/div/div[1]/div[3]/button"));
+        WebElement hoverElement2 = driver.findElement(By.xpath("//*[@id=\"header\"]/nav/div/div/div[2]/div/div/div[1]/div[3]/div/div/div/div[1]/div/div[1]/ul/li[3]/a/div[2]/h3"));
+
+        //Mouse hover menuOption 'Music'
+        actions.moveToElement(hoverElement1).perform();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        actions.moveToElement(hoverElement2).perform();
+        System.out.println("Done Mouse hover on Button");
+
+
+
+
+    }
 
 
 
