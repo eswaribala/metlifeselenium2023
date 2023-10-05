@@ -708,6 +708,7 @@ public class App
         webDriver.quit();
         }
 
+        @Test
         public void testDownloadOptions(){
             WebDriver driver=new ChromeDriver();
             driver.get("http://localhost:63343/hsbcuitraining2023/bankapp/Download.html");

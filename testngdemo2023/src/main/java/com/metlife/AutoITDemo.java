@@ -1,5 +1,6 @@
 package com.metlife;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -103,6 +104,27 @@ public class AutoITDemo {
         // click the "UploadFile" button
         driver.findElement(By.name("send")).click();
     }
+
+
+    @Test
+    public void testDownloadOptions(){
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://localhost:63343/hsbcuitraining2023/bankapp/Download.html");
+        WebElement webElement=driver.findElement(By.xpath("//a"));
+        webElement.click();
+        Alert alert = driver.switchTo().alert();
+        // for clicking on ok button
+       // alert.accept();
+        // for clicking on cancel button
+        alert.dismiss();
+        // for getting alert text message
+        //   alert.getText();
+        // for sending some text inside the alert
+        //  alert.sendKeys("alert string");
+    }
+
+
+
 
 
 
