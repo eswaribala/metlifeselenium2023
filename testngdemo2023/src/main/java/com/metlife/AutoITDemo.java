@@ -128,7 +128,7 @@ public class AutoITDemo {
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://only-testing-blog.blogspot.com/2014/01/textbox.html");
-        webDriver.findElement(By.id("check2")).click();
+        //webDriver.findElement(By.xpath("//*[@id=\"check2\"]")).click();
         webDriver.findElement(By.xpath("//*[normalize-space(text()='France')]")).click();
     }
 
