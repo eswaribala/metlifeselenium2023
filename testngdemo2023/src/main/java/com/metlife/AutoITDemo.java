@@ -52,12 +52,13 @@ public class AutoITDemo {
     @Test
     public void testFileUploadAutoIT() throws InterruptedException, IOException {
 
-        webDriver.get("https://demo.guru99.com/test/upload/");
-        webElement=webDriver.findElement(By.id("uploadfile_0"));
-        webElement.click();
-        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv113.exe");
-        Thread.sleep(2000);
-        webDriver.close();
+        webDriver.get("https://www.ilovepdf.com/pdf_to_word");
+        webDriver.manage().window().maximize();
+
+        webDriver.findElement(By.cssSelector("a[id='pickfiles']")).click();
+        Thread.sleep(3000);
+        //autoit exe software for selecting file
+        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\upload113.exe");
 
     }
 
