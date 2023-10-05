@@ -55,22 +55,32 @@ public class AutoITDemo {
     @Test
     public void testFileUploadAutoIT() throws InterruptedException, IOException {
 
-        webDriver.get("https://www.ilovepdf.com/pdf_to_word");
-        webDriver.manage().window().maximize();
-        webDriver.findElement(By.cssSelector("a[id='pickfiles']")).click();
+        WebDriver driver=new ChromeDriver();
+        driver.get("https://www.ilovepdf.com/pdf_to_word");
+        driver.manage().window().maximize();
+
+        driver.findElement(By.cssSelector("a[id='pickfiles']")).click();
         Thread.sleep(3000);
         //autoit exe software for selecting file
         Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv113.exe");
 
         Thread.sleep(2000);
-        webDriver.findElement(By.cssSelector("span[id='processTaskTextBtn']")).click();
-        WebDriverWait wait=new WebDriverWait(webDriver,Duration.ofSeconds(230));
+        driver.findElement(By.cssSelector("span[id='processTaskTextBtn']")).click();
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(230));
         //its wait till page is totally loaded
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[id='pickfiles']")));
 
-        webDriver.findElement(By.cssSelector("a[id='pickfiles']")).click();
+        driver.findElement(By.cssSelector("a[id='pickfiles']")).click();
         Thread.sleep(5000);
-        
+        File f=new File("/visit.docx");
+        if(f.exists())
+        {
+            Assert.assertTrue(f.exists());
+            // if(f.delete())
+            //   System.out.println("file deleted");
+        }
+
+
 
     }
 
