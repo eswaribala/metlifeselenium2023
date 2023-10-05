@@ -149,15 +149,14 @@ public class AutoITDemo {
         //Instantiate Action Class
         Actions actions = new Actions(driver);
         //Retrieve WebElement 'Music' to perform mouse hover
-        WebElement hoverElement1 = driver.findElement(By.xpath("//*[@id=\"header\"]/nav/div/div/div[2]/div/div/div[1]/div[3]/button"));
-        WebElement hoverElement2 = driver.findElement(By.xpath("//*[@id=\"header\"]/nav/div/div/div[2]/div/div/div[1]/div[3]/div/div/div/div[1]/div/div[1]/ul/li[3]/a/div[2]/h3"));
+        WebElement hoverElement1 = driver.findElement(By.xpath("//*[@id=\"header\"]/nav/div/div/div[2]/div/div/div[1]/div[4]/button"));
+        WebElement hoverElement2 = driver.findElement(By.xpath("//*[@id=\"header\"]/nav/div/div/div[2]/div/div/div[1]/div[4]/div/div[1]/div/div[1]/div/div[1]/ul/li[2]/a/div[2]/h3"));
 
         //Mouse hover menuOption 'Music'
         actions.moveToElement(hoverElement1).perform();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         actions.moveToElement(hoverElement2).perform();
         System.out.println("Done Mouse hover on Button");
-
 
 
 
