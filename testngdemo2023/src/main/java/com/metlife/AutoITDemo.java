@@ -54,11 +54,10 @@ public class AutoITDemo {
 
         webDriver.get("https://www.ilovepdf.com/pdf_to_word");
         webDriver.manage().window().maximize();
-
         webDriver.findElement(By.cssSelector("a[id='pickfiles']")).click();
         Thread.sleep(3000);
         //autoit exe software for selecting file
-        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\upload113.exe");
+        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv113.exe");
 
     }
 
