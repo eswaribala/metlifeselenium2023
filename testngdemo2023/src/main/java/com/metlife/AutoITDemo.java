@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -82,6 +83,25 @@ public class AutoITDemo {
 
 
 
+    }
+
+
+    @Test
+    public void testUploadFile(){
+        String baseUrl = "https://demo.guru99.com/test/upload/";
+        WebDriver driver = new EdgeDriver();
+
+        driver.get(baseUrl);
+        WebElement uploadElement = driver.findElement(By.id("uploadfile_0"));
+
+        // enter the file path onto the file-selection input field
+        uploadElement.sendKeys("I:\\metlifews\\testngdemo\\pom.xml");
+
+        // check the "I accept the terms of service" check box
+        driver.findElement(By.id("terms")).click();
+
+        // click the "UploadFile" button
+        driver.findElement(By.name("send")).click();
     }
 
 
