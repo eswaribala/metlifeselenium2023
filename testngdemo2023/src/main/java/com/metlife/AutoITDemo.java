@@ -41,8 +41,8 @@ public class AutoITDemo {
         webDriver.switchTo().window(pw).close();
         webDriver.switchTo().window(cw);
         System.out.println("Child Window Title"+webDriver.getTitle());
-       webDriver.switchTo().window(cw).close();
-       // webDriver.close();
+        webDriver.switchTo().window(cw).close();
+
 
     }
 
