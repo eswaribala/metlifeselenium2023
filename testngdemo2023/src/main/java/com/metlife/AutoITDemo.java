@@ -1,5 +1,7 @@
 package com.metlife;
 
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Iterator;
@@ -157,6 +161,35 @@ public class AutoITDemo {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         actions.moveToElement(hoverElement2).perform();
         System.out.println("Done Mouse hover on Button");
+
+
+
+    }
+
+    @Test
+    public void testDataFromExcel() throws IOException {
+
+        File file=new File("I:\\metlifews\\Canada411Input.xlsx");
+        FileInputStream fileInputStream=new FileInputStream(file);
+        Workbook workbook=new XSSFWorkbook(fileInputStream);
+        Sheet sheet=workbook.getSheetAt(0);
+        Iterator<Row> itr=  sheet.iterator();
+        Row row=null;
+        Cell cell=null;
+        Iterator<Cell> cellIterator=null;
+        while(itr.hasNext()){
+            row= itr.next();
+            cellIterator=row.iterator();
+            while(cellIterator.hasNext()){
+                cell= cellIterator.next();
+                if(cell.getCellType().equals(CellType.STRING)){
+                    System.out.println(cell.getStringCellValue());
+                }
+            }
+
+        }
+
+
 
 
 
