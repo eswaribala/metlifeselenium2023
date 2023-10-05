@@ -1,27 +1,30 @@
 package com.metlife;
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
+import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 import static org.testng.Assert.assertEquals;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -33,6 +36,12 @@ import java.util.concurrent.TimeUnit;
 @Test
 public class App 
 {
+
+    private WebDriver webDriver;
+   @BeforeClass
+    public void setup(){
+       webDriver=new ChromeDriver();
+    }
 
 
     @DataProvider
@@ -562,6 +571,183 @@ public class App
        }
    }
 
+   @Test
+   public void testUploadFile(){
+       String baseUrl = "https://demo.guru99.com/test/upload/";
+       WebDriver driver = new EdgeDriver();
 
+       driver.get(baseUrl);
+       WebElement uploadElement = driver.findElement(By.id("uploadfile_0"));
+
+       // enter the file path onto the file-selection input field
+       uploadElement.sendKeys("I:\\metlifews\\testngdemo\\pom.xml");
+
+       // check the "I accept the terms of service" check box
+       driver.findElement(By.id("terms")).click();
+
+       // click the "UploadFile" button
+       driver.findElement(By.name("send")).click();
+   }
+
+
+   @Test
+   public void testFileUploadAutoIT() throws IOException, InterruptedException {
+
+       WebDriver driver=new EdgeDriver();
+       driver.get("https://www.ilovepdf.com/pdf_to_word");
+       driver.manage().window().maximize();
+       driver.findElement(By.cssSelector("a[id='pickfiles']")).click();
+       Thread.sleep(3000);
+       //To call the AutoIt script
+       Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv5.exe");
+       driver.close();
+
+
+
+   }
+
+    @Test
+    public void testFileDownloadAutoIT() throws IOException, InterruptedException {
+
+
+        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+        // Set ChromePref and pass the download folder path with key
+
+        WebDriver driver=new ChromeDriver();
+        driver.get("https://www.ilovepdf.com/pdf_to_word");
+        driver.manage().window().maximize();
+
+        driver.findElement(By.cssSelector("a[id='pickfiles']")).click();
+        Thread.sleep(3000);
+        //autoit exe software for selecting file
+        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv5.exe");
+
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("span[id='processTaskTextBtn']")).click();
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(230));
+        //its wait till page is totally loaded
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[id='pickfiles']")));
+
+        driver.findElement(By.cssSelector("a[id='pickfiles']")).click();
+        Thread.sleep(5000);
+        File f=new File("/visit.docx");
+        if(f.exists())
+        {
+            Assert.assertTrue(f.exists());
+           // if(f.delete())
+             //   System.out.println("file deleted");
+        }
+
+
+
+    }
+
+    @Test
+    public void testMultipleUploadFileV2() throws IOException, InterruptedException {
+
+
+
+            WebDriver driver=new EdgeDriver();
+
+            driver.get("http://demo.automationtesting.in/Register.html");
+
+            WebElement button=driver.findElement(By.xpath("//*[@id='imagesrc']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        Thread.sleep(3000);
+
+        //round1- first file
+        executor.executeScript("arguments[0].click();", button);
+        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv7.exe"+" "+ "D:\\pictures\\axis.png");
+
+        Thread.sleep(5000);
+
+        //round2-  second file
+        executor.executeScript("arguments[0].click();", button);
+        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv7.exe"+" "+ "D:\\pictures\\butterfly.jpg");
+
+        Thread.sleep(5000);
+
+        //round3-  third file file
+        executor.executeScript("arguments[0].click();", button);
+        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv7.exe"+" "+ "D:\\pictures\\bus.jpg");
+        Thread.sleep(5000);
+    }
+
+    @Test
+    public void testPopupV1(){
+        // Open browser
+
+        webDriver.get("https://secure.indeed.com/account/login");
+        //implicit wait
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        WebDriverWait webDriverWait=new WebDriverWait(webDriver,Duration.ofSeconds(10));
+
+        webDriver.findElement(By.id("login-google-button")).click();
+        // window handles
+        Set w = webDriver.getWindowHandles();
+
+        webDriverWait.until(numberOfWindowsToBe(w.size()));
+
+        // window handles iterate
+        Iterator t = w.iterator();
+        String ch = (String) t.next();
+        String pw = (String) t.next();
+        webDriver.switchTo().window(pw);
+        System.out.println("Parent window title: "+ webDriver.getTitle());
+        // switching child window
+        webDriver.switchTo().window(pw).close();
+        webDriver.switchTo().window(ch);
+        //webDriverWait.until(numberOfWindowsToBe(2));
+
+       System.out.println("Child window title "+ webDriver.getTitle());
+        // close the child browser window
+       webDriver.close();
+        // switching parent window
+      //  webDriver.switchTo().window(pw);
+        //System.out.println("Parent window title: "+ webDriver.getTitle());
+        webDriver.quit();
+        }
+
+        public void testDownloadOptions(){
+            WebDriver driver=new ChromeDriver();
+            driver.get("http://localhost:63343/hsbcuitraining2023/bankapp/Download.html");
+            WebElement webElement=driver.findElement(By.xpath("//a"));
+            webElement.click();
+            Alert alert = driver.switchTo().alert();
+            // for clicking on ok button
+            alert.accept();
+            // for clicking on cancel button
+            //alert.dismiss();
+            // for getting alert text message
+         //   alert.getText();
+            // for sending some text inside the alert
+          //  alert.sendKeys("alert string");
+        }
+        @Test
+        public void testMouseHover() throws InterruptedException {
+            WebDriver driver = new ChromeDriver();
+            driver.get("https://www.lambdatest.com/automation-demos");
+            System.out.println("demoqa webpage Displayed");
+
+            //Maximise browser window
+            driver.manage().window().maximize();
+
+            //Adding wait
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+            //Instantiate Action Class
+            Actions actions = new Actions(driver);
+            //Retrieve WebElement 'Music' to perform mouse hover
+            WebElement hoverElement1 = driver.findElement(By.xpath("//*[@id=\"header\"]/nav/div/div/div[2]/div/div/div[1]/div[3]/button"));
+            WebElement hoverElement2 = driver.findElement(By.xpath("//*[@id=\"header\"]/nav/div/div/div[2]/div/div/div[1]/div[3]/div/div/div/div[1]/div/div[1]/ul/li[3]/a/div[2]/h3"));
+
+            //Mouse hover menuOption 'Music'
+            actions.moveToElement(hoverElement1).perform();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            actions.moveToElement(hoverElement2).perform();
+            System.out.println("Done Mouse hover on Button");
+
+
+        }
 
 }
