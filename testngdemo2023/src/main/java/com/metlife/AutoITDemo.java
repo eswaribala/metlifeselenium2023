@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
@@ -45,6 +46,21 @@ public class AutoITDemo {
 
 
     }
+
+    //test auto it script
+
+    @Test
+    public void testFileUploadAutoIT() throws InterruptedException, IOException {
+
+        webDriver.get("https://demo.guru99.com/test/upload/");
+        webElement=webDriver.findElement(By.id("uploadfile_0"));
+        webElement.click();
+        Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv113.exe");
+        Thread.sleep(2000);
+        webDriver.close();
+
+    }
+
 
 
 }
