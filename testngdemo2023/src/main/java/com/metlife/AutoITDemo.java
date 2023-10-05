@@ -4,10 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Iterator;
@@ -58,6 +61,16 @@ public class AutoITDemo {
         Thread.sleep(3000);
         //autoit exe software for selecting file
         Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\uploadv113.exe");
+
+        Thread.sleep(2000);
+        webDriver.findElement(By.cssSelector("span[id='processTaskTextBtn']")).click();
+        WebDriverWait wait=new WebDriverWait(webDriver,Duration.ofSeconds(230));
+        //its wait till page is totally loaded
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[id='pickfiles']")));
+
+        webDriver.findElement(By.cssSelector("a[id='pickfiles']")).click();
+        Thread.sleep(5000);
+        
 
     }
 
