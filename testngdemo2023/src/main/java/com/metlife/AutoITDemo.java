@@ -17,9 +17,7 @@ import org.testng.annotations.Test;
 
 import java.io.*;
 import java.time.Duration;
-import java.util.Iterator;
-import java.util.ResourceBundle;
-import java.util.Set;
+import java.util.*;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 
@@ -195,6 +193,7 @@ public class AutoITDemo {
         FileInputStream fileInputStream=new FileInputStream(file);
         Workbook workbook=new XSSFWorkbook(fileInputStream);
         Sheet sheet=workbook.getSheet("TestSheet-1");
+        List<String> phoneNumbers=new ArrayList<>();
         Iterator<Row> itr=  sheet.iterator();
         Row row=null;
         Cell cell=null;
@@ -207,15 +206,29 @@ public class AutoITDemo {
                 cell= cellIterator.next();
                 if(cell.getCellType().equals(CellType.STRING)){
                     System.out.println(cell.getStringCellValue());
+                    phoneNumbers.add(cell.getStringCellValue());
                 }
             }
-
         }
 
 
+        webDriver=new ChromeDriver();
+
+        for(String phoneNumber:phoneNumbers) {
+
+            webDriver.get("https://www.canada411.ca/");
+            webDriver.findElement(By.id("c411PeopleReverseWhat")).sendKeys(phoneNumber);
+            webDriver.findElement(By.id("c411PeopleReverseFind")).click();
+
+           if(!webDriver.findElements(By.xpath("//*[@id=\"ypgBody\"]/div[3]/div/div[1]/div[2]/div[1]/div[1]/h1/span")).isEmpty()){
+
+               System.out.println(webDriver.findElement(By.xpath("//*[@id='ypgBody']/div[3]/div/div[1]/div[2]/div[1]/div[1]/h1/span")).getText());
+           }
+           else
+               System.out.println("Phone Number not existing");
 
 
-
+        }
     }
 
 
