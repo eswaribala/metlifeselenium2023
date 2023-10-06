@@ -168,7 +168,7 @@ public class AutoITDemo {
     public void testIEDownload() throws IOException, InterruptedException {
         webDriver.close();
         webDriver.quit();
-        Process proc=Runtime.getRuntime().exec("I:\\metlifews\\testngdemo2023\\externalresources\\ie4.exe");
+        Process proc=Runtime.getRuntime().exec(".\\externalresources\\ie4.exe");
         InputStream is = proc.getInputStream();
         int retCode = 0;
         while(retCode != -1)
