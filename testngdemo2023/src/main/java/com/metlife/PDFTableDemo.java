@@ -5,13 +5,16 @@ import com.spire.pdf.utilities.PdfTable;
 import com.spire.pdf.utilities.PdfTableExtractor;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ResourceBundle;
 
 public class PDFTableDemo {
 
 
     @Test
-    public void testPDFTables(){
+    public void testPDFTables() throws IOException {
         ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
         String dirName=resourceBundle.getString("userdir");
         String fileName=resourceBundle.getString("pdffilename");
@@ -31,10 +34,14 @@ public class PDFTableDemo {
 
                             stringBuilder.append(pdfTable.getText(i,j)+"|");
                         }
+                        stringBuilder.append("\n");
                     }
                 }
             }
 
+            FileWriter fileWriter=new FileWriter(new File("data.txt"));
+            fileWriter.write(stringBuilder.toString());
+            fileWriter.close();
 
         }
 
