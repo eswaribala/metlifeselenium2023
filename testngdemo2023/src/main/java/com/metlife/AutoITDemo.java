@@ -15,10 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
@@ -165,6 +162,22 @@ public class AutoITDemo {
 
 
     }
+
+
+    @Test
+    public void testIEDownload() throws IOException, InterruptedException {
+        webDriver.close();
+        webDriver.quit();
+        Process proc=Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\ie4.exe");
+        InputStream is = proc.getInputStream();
+        int retCode = 0;
+        while(retCode != -1)
+        {
+            retCode = is.read();
+        }
+        System.out.println("Now Exiting");
+    }
+
 
     @Test
     public void testDataFromExcel() throws IOException {
