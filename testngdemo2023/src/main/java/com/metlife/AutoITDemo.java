@@ -239,7 +239,7 @@ public class AutoITDemo {
     @Test
     public void testWriteExcel() throws FileNotFoundException {
         Workbook workbook=new XSSFWorkbook();
-        Sheet sheet=workbook.getSheet("User-Sheet");
+        Sheet sheet=workbook.createSheet("User-Sheet");
 
         Map<String,String> userMap=new HashMap<>();
        for(int i=0;i<100;i++)
