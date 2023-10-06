@@ -109,6 +109,13 @@
       <artifactId>log4j-to-slf4j</artifactId>
       <version>2.20.0</version>
     </dependency>
+
+
+    <dependency>
+      <groupId>com.aspose</groupId>
+      <artifactId>aspose-cells</artifactId>
+      <version>22.1</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -178,4 +185,15 @@
       </plugin>
     </plugins>
   </build>
+  <repositories>
+    <repository>
+      <id>AsposeJavaAPI</id>
+      <name>Aspose Java API</name>
+      <url>https://repository.aspose.com/repo/</url>
+    </repository>
+
+
+
+  </repositories>
+
 </project>
