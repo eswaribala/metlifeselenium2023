@@ -167,6 +167,9 @@ public class AutoITDemo {
 
     @Test
     public void testIEDownload() throws IOException, InterruptedException {
+       // webDriver=new ChromeDriver();
+       // webDriver.get("https://beta.bls.gov/dataViewer/view/timeseries/CES8000000001");
+       // webDriver.findElement(By.id("excelclickCE")).click();
         webDriver.close();
         webDriver.quit();
         ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
@@ -185,8 +188,10 @@ public class AutoITDemo {
 
     @Test
     public void testDataFromExcel() throws IOException {
-
-        File file=new File("I:\\metlifews\\Canada411Input.xlsx");
+        ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
+        String dirName=resourceBundle.getString("userdir");
+        String fileName=resourceBundle.getString("excelfilename");
+        File file=new File(dirName,fileName);
         FileInputStream fileInputStream=new FileInputStream(file);
         Workbook workbook=new XSSFWorkbook(fileInputStream);
         Sheet sheet=workbook.getSheet("TestSheet-1");
