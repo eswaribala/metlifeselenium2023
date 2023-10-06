@@ -51,22 +51,23 @@ public class ExcelAsposeDemo {
         workbook=new Workbook(fileInputStream);
         sheet=workbook.getWorksheets().get(0);
         CellArea cellArea=new CellArea();
-        cellArea.StartRow=10;
-        cellArea.EndRow=25;
+        cellArea.StartRow=14;
+        cellArea.EndRow=40;
         cellArea.StartColumn=1;
         cellArea.EndColumn=4;
         findOptions.setRange(cellArea);
         findOptions.setCaseSensitive(true);
-        findOptions.setLookAtType(LookAtType.START_WITH);
+      //  findOptions.setLookAtType(LookAtType.START_WITH);
         cells=sheet.getCells();
         Cell nextCell=null;
         do{
 
-            nextCell=sheet.getCells().find("User",nextCell,findOptions);
+            nextCell=sheet.getCells().find("2021",nextCell,findOptions);
             if(nextCell==null)
                 break;
             else
                 System.out.println(nextCell.getValue().toString().trim());
+
         }
         while(true);
 
