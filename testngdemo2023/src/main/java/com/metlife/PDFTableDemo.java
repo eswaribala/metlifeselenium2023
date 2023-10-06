@@ -1,10 +1,14 @@
 package com.metlife;
 
 import com.spire.pdf.PdfDocument;
+import com.spire.pdf.PdfPageBase;
+import com.spire.pdf.texts.PdfTextExtractOptions;
+import com.spire.pdf.texts.PdfTextExtractor;
 import com.spire.pdf.utilities.PdfTable;
 import com.spire.pdf.utilities.PdfTableExtractor;
 import org.testng.annotations.Test;
 
+import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -47,5 +51,22 @@ public class PDFTableDemo {
 
 
 
+    }
+
+    @Test
+    public void testPDFTextExtraction() throws IOException {
+        ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
+        String dirName=resourceBundle.getString("userdir");
+        String fileName=resourceBundle.getString("pdffilename");
+        PdfDocument pdfDocument=new PdfDocument(".\\"+dirName+"\\"+fileName);
+        PdfPageBase pdfPageBase=pdfDocument.getPages().get(1);
+        PdfTextExtractor pdfTextExtractor=new PdfTextExtractor(pdfPageBase);
+        PdfTextExtractOptions pdfTextExtractOptions=new PdfTextExtractOptions();
+        Rectangle2D rectangle2D=new Rectangle2D.Float(0,0,1000,400);
+        pdfTextExtractOptions.setExtractArea(rectangle2D);
+        String text=pdfTextExtractor.extract(pdfTextExtractOptions);
+        FileWriter fileWriter=new FileWriter(new File("pdftext.txt"));
+        fileWriter.write(text);
+        fileWriter.close();
     }
 }
