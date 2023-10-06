@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 import java.io.*;
 import java.time.Duration;
 import java.util.Iterator;
+import java.util.ResourceBundle;
 import java.util.Set;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
@@ -168,7 +169,10 @@ public class AutoITDemo {
     public void testIEDownload() throws IOException, InterruptedException {
         webDriver.close();
         webDriver.quit();
-        Process proc=Runtime.getRuntime().exec(".\\externalresources\\ie4.exe");
+        ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
+        String dirName=resourceBundle.getString("userdir");
+        String fileName=resourceBundle.getString("filename");
+        Process proc=Runtime.getRuntime().exec(".\\"+dirName+"\\"+fileName);
         InputStream is = proc.getInputStream();
         int retCode = 0;
         while(retCode != -1)
