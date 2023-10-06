@@ -219,7 +219,7 @@ public class AutoITDemo {
             webDriver.get("https://www.canada411.ca/");
             webDriver.findElement(By.id("c411PeopleReverseWhat")).sendKeys(phoneNumber);
             webDriver.findElement(By.id("c411PeopleReverseFind")).click();
-
+            webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
            if(!webDriver.findElements(By.xpath("//*[@id=\"ypgBody\"]/div[3]/div/div[1]/div[2]/div[1]/div[1]/h1/span")).isEmpty()){
 
                System.out.println(webDriver.findElement(By.xpath("//*[@id='ypgBody']/div[3]/div/div[1]/div[2]/div[1]/div[1]/h1/span")).getText());
