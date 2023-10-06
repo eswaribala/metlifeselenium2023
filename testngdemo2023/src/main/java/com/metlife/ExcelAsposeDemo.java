@@ -34,5 +34,41 @@ public class ExcelAsposeDemo {
         System.out.println("Name of the cell containing String: " + cell.getName());
         System.out.println("the cell value is: " + cell.getValue());
 
+
+
+// Define it as Regex
+        findOptions.setRegexKey(true);
+        findOptions.setLookAtType(LookAtType.ENTIRE_CONTENT);
+        findOptions.setLookInType(LookInType.VALUES);
+        cell = cells.find("[A-Za-z0-9]{5,25}", cell, findOptions);
+        System.out.println("Name of the cell containing String: " + cell.getName());
+        System.out.println("the cell value is: " + cell.getValue());
+
+//cell range
+        fileName=resourceBundle.getString("employeefilename");
+        file=new File(dirName,fileName);
+        fileInputStream=new FileInputStream(file);
+        workbook=new Workbook(fileInputStream);
+        sheet=workbook.getWorksheets().get(0);
+        CellArea cellArea=new CellArea();
+        cellArea.StartRow=10;
+        cellArea.EndRow=25;
+        cellArea.StartColumn=1;
+        cellArea.EndColumn=4;
+        findOptions.setRange(cellArea);
+        findOptions.setCaseSensitive(true);
+        findOptions.setLookAtType(LookAtType.START_WITH);
+        cells=sheet.getCells();
+        Cell nextCell=null;
+        do{
+
+            nextCell=sheet.getCells().find("User",nextCell,findOptions);
+            if(nextCell==null)
+                break;
+            else
+                System.out.println(nextCell.getValue().toString().trim());
+        }
+        while(true);
+
     }
 }
