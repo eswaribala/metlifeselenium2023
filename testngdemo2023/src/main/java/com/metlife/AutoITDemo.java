@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.*;
 
@@ -206,7 +207,8 @@ public class AutoITDemo {
                 cell= cellIterator.next();
                 if(cell.getCellType().equals(CellType.STRING)){
                     System.out.println(cell.getStringCellValue());
-                    phoneNumbers.add(cell.getStringCellValue());
+                    if(!cell.getStringCellValue().isEmpty())
+                       phoneNumbers.add(cell.getStringCellValue());
                 }
             }
         }
@@ -229,8 +231,54 @@ public class AutoITDemo {
 
 
         }
+
+
+
     }
 
+    @Test
+    public void testWriteExcel() throws FileNotFoundException {
+        Workbook workbook=new XSSFWorkbook();
+        Sheet sheet=workbook.getSheet("User-Sheet");
+
+        Map<String,String> userMap=new HashMap<>();
+       for(int i=0;i<100;i++)
+         userMap.put("User"+i,Base64.getEncoder().encodeToString(("Password@"+i).getBytes()));
+
+       Set<Map.Entry<String,String>> set=userMap.entrySet();
+       Iterator<Map.Entry<String,String>> iterator=set.iterator();
+
+       Map.Entry<String,String> entry=null;
+       String userName,password=null;
+       int rowNum=0;
+       int cellNum=0;
+       while(iterator.hasNext()){
+           entry=iterator.next();
+           Row row=sheet.createRow(rowNum++);
+           userName=entry.getKey();
+           password=entry.getValue();
+           Cell cell=row.createCell(cellNum++);
+           cell.setCellValue(userName);
+           cell=row.createCell(cellNum);
+           cell.setCellValue(password);
+           cellNum=0;
+
+       }
+        ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
+        String dirName=resourceBundle.getString("userdir");
+        String fileName=resourceBundle.getString("userfilename");
+        File file=new File(dirName,fileName);
+       FileOutputStream fileOutputStream=new FileOutputStream(file);
+        try {
+            workbook.write(fileOutputStream);
+            fileOutputStream.close();
+            System.out.println("users2023.xlsx written successfully on disk.");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 
 
 
