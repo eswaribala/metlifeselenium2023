@@ -172,11 +172,12 @@ public class AutoITDemo {
         File file=new File("I:\\metlifews\\Canada411Input.xlsx");
         FileInputStream fileInputStream=new FileInputStream(file);
         Workbook workbook=new XSSFWorkbook(fileInputStream);
-        Sheet sheet=workbook.getSheetAt(0);
+        Sheet sheet=workbook.getSheet("TestSheet-1");
         Iterator<Row> itr=  sheet.iterator();
         Row row=null;
         Cell cell=null;
         Iterator<Cell> cellIterator=null;
+        itr.next();
         while(itr.hasNext()){
             row= itr.next();
             cellIterator=row.iterator();

@@ -1,0 +1,7 @@
+Sleep(500)
+ControlFocus("File Upload","","Edit1")
+Sleep(500)
+ControlSetText("File Upload","","Edit1",$CmdLine[1])
+Sleep(500)
+ControlClick("File Upload","","Button1")
+Sleep(500)

@@ -3,7 +3,12 @@ import static org.openqa.selenium.support.locators.RelativeLocator.with;
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 import static org.testng.Assert.assertEquals;
 
+import com.spire.pdf.PdfDocument;
+import com.spire.pdf.utilities.PdfTable;
+import com.spire.pdf.utilities.PdfTableExtractor;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,16 +18,24 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.winium.DesktopOptions;
+import org.openqa.selenium.winium.WiniumDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -533,13 +546,16 @@ public class App
     }
 
     @Test
-    public void testPlayVideo(){
+    public void testPlayVideo() throws InterruptedException {
         WebDriver driver=new ChromeDriver();
-        driver.get("https://www.wonderplugin.com/wordpress-lightbox");
+        driver.get("http://www.w3.org/2010/05/video/mediaevents.html");
         WebElement video = driver.findElement(By.tagName("video"));
-
+        video.click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].play();", video);
+        Thread.sleep(5000);
+        js.executeScript("arguments[0].pause();", video);
+
     }
 
    @Test
@@ -750,5 +766,202 @@ public class App
 
 
         }
+
+    @Test
+    public void testDataFromExcel() throws IOException {
+
+        File file = new File("I:\\metlifews\\Canada411Input.xls");
+        FileInputStream fileInputStream = new FileInputStream(file);
+        Workbook workbook = new XSSFWorkbook(fileInputStream);
+        Sheet sheet = workbook.getSheet("TestSheet-1");
+        Iterator<Row> itr = sheet.iterator();
+        Row row = null;
+        Cell cell = null;
+        Iterator<Cell> cellIterator = null;
+        itr.next();
+        List<String> phoneNumbers=new ArrayList<>();
+        while (itr.hasNext()) {
+            row = itr.next();
+            cellIterator = row.iterator();
+            while (cellIterator.hasNext()) {
+                cell = cellIterator.next();
+                if (cell.getCellType().equals(CellType.STRING)) {
+                    System.out.println(cell.getStringCellValue());
+                    phoneNumbers.add(cell.getStringCellValue());
+                }
+            }
+        }
+        webDriver.close();
+        webDriver=new ChromeDriver();
+        WebElement webElement=null;
+        for(String phoneNumber:phoneNumbers) {
+            webDriver.get("https://www.canada411.ca/");
+            webDriver.findElement(By.xpath("//input[@id='c411PeopleReverseWhat']")).sendKeys(phoneNumber);
+            webDriver.findElement(By.xpath("//input[@id='c411PeopleReverseFind']")).click();
+            webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+
+            if(!webDriver.findElements(By.xpath("//*[@id=\"ypgBody\"]/div[3]/div/div[1]/div[2]/div[1]/div[1]/h1/span")).isEmpty()) {
+               webElement=webDriver.findElement(By.xpath("//*[@id=\"ypgBody\"]/div[3]/div/div[1]/div[2]/div[1]/div[1]/h1/span"));
+                   System.out.println(webElement.getText());
+           }
+        }
+       webDriver.quit();
+    }
+
+
+    @Test
+    public void writeDataToExcel() throws Exception {
+        Workbook workbook = new XSSFWorkbook();
+
+//Create a blank sheet
+
+       Sheet sheet = workbook.createSheet("Users Data");
+
+//Prepare data to be written as an Object[]
+
+
+        Map<String, String> data = new TreeMap<String,String>();
+        data.put("user1", Base64.getUrlEncoder().encodeToString("Password@1".getBytes()));
+        data.put("user2", Base64.getUrlEncoder().encodeToString("Password@2".getBytes()));
+        data.put("user3", Base64.getUrlEncoder().encodeToString("Password@3".getBytes()));
+        data.put("user4", Base64.getUrlEncoder().encodeToString("Password@4".getBytes()));
+
+//Iterate over data and write to sheet
+
+        Set<String> keyset = data.keySet();
+        int rownum = 0;
+        for (String key : keyset) {
+
+            Row row = sheet.createRow(rownum++);
+            String value = data.get(key);
+            int cellnum = 0;
+            Cell cell = row.createCell(cellnum++);
+            cell.setCellValue(key);
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(String.valueOf(value));
+
+
+        }
+
+//Write the workbook in file system
+
+        try {
+            FileOutputStream out = new FileOutputStream(new File("users.xlsx"));
+            workbook.write(out);
+            out.close();
+            System.out.println("users.xlsx written successfully on disk.");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void readDecryptedData() throws Exception {
+
+        File file = new File("I:\\metlifews\\testngdemo\\users.xlsx");
+        FileInputStream fileInputStream = new FileInputStream(file);
+        Workbook workbook = new XSSFWorkbook(fileInputStream);
+        Sheet sheet = workbook.getSheet("Users Data");
+        Iterator<Row> itr = sheet.iterator();
+        Row row = null;
+        Cell cell = null;
+        Iterator<Cell> cellIterator = null;
+        HashMap<String,String> users=new HashMap<String,String>();
+        String key=null;
+        String value=null;
+        while (itr.hasNext()) {
+            row = itr.next();
+            cellIterator = row.iterator();
+            while (cellIterator.hasNext()) {
+                cell = cellIterator.next();
+                if (cell.getCellType().equals(CellType.STRING)) {
+                    key=cell.getStringCellValue();
+                    cell = cellIterator.next();
+                    value=cell.getStringCellValue();
+                    users.put(key,value);
+                }
+            }
+        }
+
+        Set<Map.Entry<String,String>> set=users.entrySet();
+        Iterator<Map.Entry<String,String>> itrUsers= set.iterator();
+        Map.Entry<String,String> entry=null;
+        String decryptedData=null;
+        while(itrUsers.hasNext()){
+            entry= itrUsers.next();
+            decryptedData= new String(Base64.getUrlDecoder().decode(entry.getValue()));
+            System.out.println(entry.getKey()+","+decryptedData);
+        }
+
+    }
+
+    @Test
+
+    public void testReadPDFTable() throws IOException {
+        //Load a sample PDF document
+        PdfDocument pdf = new PdfDocument("I:\\metlifews\\data.pdf");
+
+        //Create a StringBuilder instance
+        StringBuilder builder = new StringBuilder();
+        //Create a PdfTableExtractor instance
+        PdfTableExtractor extractor = new PdfTableExtractor(pdf);
+
+        //Loop through the pages in the PDF
+        for (int pageIndex = 0; pageIndex < pdf.getPages().getCount(); pageIndex++) {
+            //Extract tables from the current page into a PdfTable array
+            PdfTable[] tableLists = extractor.extractTable(pageIndex);
+
+            //If any tables are found
+            if (tableLists != null && tableLists.length > 0) {
+                //Loop through the tables in the array
+                for (PdfTable table : tableLists) {
+                    //Loop through the rows in the current table
+                    for (int i = 0; i < table.getRowCount(); i++) {
+                        //Loop through the columns in the current table
+                        for (int j = 0; j < table.getColumnCount(); j++) {
+                            //Extract data from the current table cell and append to the StringBuilder
+                            String text = table.getText(i, j);
+                            builder.append(text + " | ");
+                        }
+                        builder.append("\r\n");
+                    }
+                }
+            }
+        }
+
+        //Write data into a .txt document
+        FileWriter fw = new FileWriter("ExtractTable.txt");
+        fw.write(builder.toString());
+        fw.flush();
+        fw.close();
+    }
+
+
+    @Test
+  public void testDesktopPoupWindow() throws IOException {
+        Process proc=Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\popup.exe");
+        InputStream is = proc.getInputStream();
+        int retCode = 0;
+        while(retCode != -1)
+        {
+            retCode = is.read();
+        }
+        System.out.println("Now Exiting");
+  }
+
+    @Test
+    public void testIEDownload() throws IOException, InterruptedException {
+       webDriver.close();
+       webDriver.quit();
+        Process proc=Runtime.getRuntime().exec("I:\\metlifews\\autoitws\\ie4.exe");
+        InputStream is = proc.getInputStream();
+        int retCode = 0;
+        while(retCode != -1)
+        {
+            retCode = is.read();
+        }
+        System.out.println("Now Exiting");
+    }
 
 }
