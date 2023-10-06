@@ -28,7 +28,7 @@ public class ExcelAsposeDemo {
 
 // Find the cell containing a string value
         findOptions.setLookAtType(LookAtType.ENTIRE_CONTENT);
-        Cell cell = cells.find("User38", null, findOptions);
+        Cell cell = cells.find("User66", null, findOptions);
 
 // Show the cell name and its value
         System.out.println("Name of the cell containing String: " + cell.getName());
