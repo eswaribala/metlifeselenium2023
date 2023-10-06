@@ -281,6 +281,60 @@ public class AutoITDemo {
     }
 
 
+    @Test
+    public void testDecodeExcelData() throws IOException {
+            ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
+            String dirName=resourceBundle.getString("userdir");
+            String fileName=resourceBundle.getString("userfilename");
+            File file=new File(dirName,fileName);
+            FileInputStream fileInputStream=new FileInputStream(file);
+            Workbook workbook=new XSSFWorkbook(fileInputStream);
+            Sheet sheet=workbook.getSheet("User-Sheet");
+            HashMap<String,String> userMap= new HashMap<>();
+            Iterator<Row> itr=  sheet.iterator();
+            Row row=null;
+            Cell cell=null;
+            Iterator<Cell> cellIterator=null;
+            String userName=null,password=null;
+            while(itr.hasNext()){
+                row= itr.next();
+                cellIterator=row.iterator();
+                while(cellIterator.hasNext()){
+                    cell= cellIterator.next();
+                    if(cell.getCellType().equals(CellType.STRING)){
+
+                        if(!cell.getStringCellValue().isEmpty()) {
+                            userName=cell.getStringCellValue();
+                        }
+                    }
+
+                    cell= cellIterator.next();
+                    if(cell.getCellType().equals(CellType.STRING)){
+
+                        if(!cell.getStringCellValue().isEmpty()) {
+                            password=new String(Base64.getDecoder().decode(cell.getStringCellValue().getBytes()));
+                        }
+                    }
+
+                    userMap.put(userName,password);
+                }
+            }
+
+        Set<Map.Entry<String,String>> set=userMap.entrySet();
+        Iterator<Map.Entry<String,String>> iterator=set.iterator();
+
+        Map.Entry<String,String> entry=null;
+
+        while(iterator.hasNext()) {
+            entry = iterator.next();
+            System.out.println(entry.getKey()+","+entry.getValue());
+        }
+
+
+
+    }
+
+
 
 
 
