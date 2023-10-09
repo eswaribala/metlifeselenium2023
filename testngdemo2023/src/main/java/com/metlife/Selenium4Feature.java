@@ -1,6 +1,9 @@
 package com.metlife;
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
+import com.opencsv.CSVWriter;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.csv.CsvWriter;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,12 +20,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -218,12 +223,31 @@ public class Selenium4Feature {
         webElement.click();
         JavascriptExecutor javascriptExecutor= (JavascriptExecutor) webDriver;
         javascriptExecutor.executeScript("arguments[0].play()",webElement);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         javascriptExecutor.executeScript("arguments[0].pause()",webElement);
 
 
     }
 
+    @Test
+    public void testCSVFileWriter() throws IOException {
+
+        File file=new File("I:\\metlifews\\employeedata.csv");
+        FileWriter fileWriter=new FileWriter(file);
+        CSVWriter csvWriter=new CSVWriter(fileWriter);
+        StringBuffer stringBuffer=new StringBuffer();
+        for(int i=0;i<100;i++){
+
+            stringBuffer.append(String.valueOf(new Random().nextInt(10000))+","+"employee"+i+","+
+                    LocalDate.of(1990+new Random().nextInt(22),
+                            1+new Random().nextInt(10), 1+new Random().nextInt(25))+"\n");
+        }
+        String[] data=new String[] {stringBuffer.toString()};
+        csvWriter.writeNext(data);
+        csvWriter.close();
+        fileWriter.close();
+        
+    }
 
 
 
