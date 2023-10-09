@@ -1,0 +1,9 @@
+go to the folder where you have project
+From cli give  the following commands
+1. git init
+2. git add .
+3. git commit -m "updated"
+4. git config --global user.name "xxxx"
+git config --global user.password "xxxxx"
+5.git remote add origin https://parameswaribala@dev.azure.com/parameswaribala/testngdemo/_git/testngdemo
+6. git push -u origin --all
