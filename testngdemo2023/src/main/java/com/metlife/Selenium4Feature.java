@@ -1,7 +1,9 @@
 package com.metlife;
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import com.opencsv.exceptions.CsvValidationException;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.params.shadow.com.univocity.parsers.csv.CsvWriter;
 import org.openqa.selenium.*;
@@ -19,9 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -243,6 +243,22 @@ public class Selenium4Feature {
     }
 
 
+    @Test
+    public void testCSVFileReader() throws IOException, CsvValidationException {
+        File file=new File("I:\\metlifews\\employeedata.csv");
+        FileReader fileReader=new FileReader(file);
+        CSVReader csvReader=new CSVReader(fileReader);
+        String[] nextRow=null;
+        while((nextRow=csvReader.readNext())!=null){
+            for(String col : nextRow){
+                System.out.println(col+"\t");
+            }
+
+        }
+        csvReader.close();
+        fileReader.close();
+
+    }
 
 
 }

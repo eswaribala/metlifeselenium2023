@@ -7,6 +7,7 @@ import com.spire.pdf.texts.*;
 import com.spire.pdf.utilities.PdfTable;
 import com.spire.pdf.utilities.PdfTableExtractor;
 import de.redsix.pdfcompare.PdfComparator;
+import de.redsix.pdfcompare.env.SimpleEnvironment;
 import org.testng.annotations.Test;
 
 import javax.imageio.ImageIO;
@@ -120,11 +121,7 @@ public class PDFTableDemo {
 
     @Test
     public void testPDFComparsion(){
-        //PdfDocument pdfDocument1=new PdfDocument("I:\\metlifews\\data.pdf");
-        //PdfDocument pdfDocument2=new PdfDocument("I:\\metlifews\\RPS Course - Selenium for Metlife.pdf");
-       // PdfComparer pdfComparer=new PdfComparer(pdfDocument1,pdfDocument2);
-       // pdfComparer.getOptions().setPageRanges(0,pdfDocument1.getPages().getCount()-1,0,pdfDocument2.getPages().getCount()-1);
-        boolean isEquals = false;
+       boolean isEquals = false;
 
         // Compare the PDF Visually
         try
@@ -134,8 +131,11 @@ public class PDFTableDemo {
             File file2 = new File("I:\\metlifews\\RPS Course - Selenium for Metlife.pdf");
             try {
                 isEquals = new PdfComparator(file1, file2)
+                        .withEnvironment(new SimpleEnvironment().setActualColor(Color.BLACK).setExpectedColor(Color.RED))
                         .compare()
+
                         .writeTo("I:\\metlifews\\CompareResult");
+
                 //comparedreport = download_path+getXMLData("ComparePDFResult")+"CompareResult.pdf";
             } catch (IOException e) {
                 // TODO Auto-generated catch block
