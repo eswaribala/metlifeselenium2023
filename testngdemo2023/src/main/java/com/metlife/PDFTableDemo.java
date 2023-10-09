@@ -6,6 +6,7 @@ import com.spire.pdf.comparison.PdfComparer;
 import com.spire.pdf.texts.*;
 import com.spire.pdf.utilities.PdfTable;
 import com.spire.pdf.utilities.PdfTableExtractor;
+import de.redsix.pdfcompare.PdfComparator;
 import org.testng.annotations.Test;
 
 import javax.imageio.ImageIO;
@@ -119,13 +120,41 @@ public class PDFTableDemo {
 
     @Test
     public void testPDFComparsion(){
-        PdfDocument pdfDocument1=new PdfDocument("I:\\metlifews\\data.pdf");
-        PdfDocument pdfDocument2=new PdfDocument("I:\\metlifews\\RPS Course - Selenium for Metlife.pdf");
-        PdfComparer pdfComparer=new PdfComparer(pdfDocument1,pdfDocument2);
-        pdfComparer.getOptions().setPageRanges(0,pdfDocument1.getPages().getCount()-1,0,pdfDocument2.getPages().getCount()-1);
-        //to compare the entire paage
+        //PdfDocument pdfDocument1=new PdfDocument("I:\\metlifews\\data.pdf");
+        //PdfDocument pdfDocument2=new PdfDocument("I:\\metlifews\\RPS Course - Selenium for Metlife.pdf");
+       // PdfComparer pdfComparer=new PdfComparer(pdfDocument1,pdfDocument2);
+       // pdfComparer.getOptions().setPageRanges(0,pdfDocument1.getPages().getCount()-1,0,pdfDocument2.getPages().getCount()-1);
+        boolean isEquals = false;
 
-        //pdfComparer.compare();
+        // Compare the PDF Visually
+        try
+        {
+
+            File file1 = new File("I:\\metlifews\\data.pdf");
+            File file2 = new File("I:\\metlifews\\RPS Course - Selenium for Metlife.pdf");
+            try {
+                isEquals = new PdfComparator(file1, file2)
+                        .compare()
+                        .writeTo("I:\\metlifews\\"+"_"+"CompareResult");
+                //comparedreport = download_path+getXMLData("ComparePDFResult")+"CompareResult.pdf";
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            if (!isEquals) {
+                System.out.println("Differences found!");
+            }
+            if (isEquals) {
+                System.out.println("Differences not found!");
+            }
+        }
+        catch(
+                Exception e)
+
+        {
+        }
+
     }
+
 
 }
