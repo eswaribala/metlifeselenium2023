@@ -2,16 +2,19 @@ package com.metlife;
 
 import com.spire.pdf.PdfDocument;
 import com.spire.pdf.PdfPageBase;
-import com.spire.pdf.texts.PdfTextExtractOptions;
-import com.spire.pdf.texts.PdfTextExtractor;
+import com.spire.pdf.texts.*;
 import com.spire.pdf.utilities.PdfTable;
 import com.spire.pdf.utilities.PdfTableExtractor;
 import org.testng.annotations.Test;
 
+import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.EnumSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class PDFTableDemo {
@@ -69,4 +72,32 @@ public class PDFTableDemo {
         fileWriter.write(text);
         fileWriter.close();
     }
+
+    @Test
+    public void testPDFFindOptions(){
+        ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
+        String dirName=resourceBundle.getString("userdir");
+        String fileName=resourceBundle.getString("pdffilename");
+        PdfDocument pdfDocument=new PdfDocument(".\\"+dirName+"\\"+fileName);
+        //findoptions
+        PdfTextFindOptions pdfTextFindOptions=new PdfTextFindOptions();
+        pdfTextFindOptions.setTextFindParameter(EnumSet.of(TextFindParameter.WholeWord));
+
+        Iterator<PdfPageBase> pages=pdfDocument.getPages().iterator();
+        while(pages.hasNext()){
+
+            PdfTextFinder pdfTextFinder=new PdfTextFinder(pages.next());
+            List<PdfTextFragment> pdfTextFragmentList=pdfTextFinder.find("Automobile",pdfTextFindOptions);
+            for(PdfTextFragment pdfTextFragment :pdfTextFragmentList){
+                pdfTextFragment.highLight(Color.MAGENTA);
+            }
+
+        }
+
+        pdfDocument.saveToFile("data2023.pdf");
+
+    }
+
+
+
 }

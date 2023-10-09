@@ -4,8 +4,14 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsT
 import static org.testng.Assert.assertEquals;
 
 import com.spire.pdf.PdfDocument;
+import com.spire.pdf.PdfPageBase;
+import com.spire.pdf.texts.PdfTextFindOptions;
+import com.spire.pdf.texts.PdfTextFinder;
+import com.spire.pdf.texts.PdfTextFragment;
+import com.spire.pdf.texts.TextFindParameter;
 import com.spire.pdf.utilities.PdfTable;
 import com.spire.pdf.utilities.PdfTableExtractor;
+import com.spire.pdf.widget.PdfPageCollection;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -29,6 +35,8 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -935,6 +943,62 @@ public class App
         fw.write(builder.toString());
         fw.flush();
         fw.close();
+    }
+
+    @Test
+    public void testPdfFindOptions(){
+//Create a PdfDocument instance
+        PdfDocument pdf = new PdfDocument();
+        //Load a PDF file
+        pdf.loadFromFile("I:\\metlifews\\data.pdf");
+
+        //Create a PdfTextFindOptions instance
+        PdfTextFindOptions findOptions = new PdfTextFindOptions();
+        //Specify the text finding parameter
+        findOptions.setTextFindParameter(EnumSet.of(TextFindParameter.WholeWord));
+
+        Iterator<PdfPageBase> itr = pdf.getPages().iterator();
+
+        //Loop through the pages in the PDF file
+        while(itr.hasNext())
+        {
+            //Create a PdfTextFinder instance
+            PdfTextFinder finder = new PdfTextFinder(itr.next());
+            //Find a specific text
+            List<PdfTextFragment> results = finder.find("Electromagnets", findOptions);
+            //Highlight all occurrences of the specific text
+            for (PdfTextFragment text : results)
+            {
+                text.highLight(java.awt.Color.GREEN);
+            }
+        }
+
+        //Save the result file
+        pdf.saveToFile("HighlightText.pdf");
+    }
+
+    @Test
+    public void testPdfExtractImages() throws IOException {
+        //create a PdfDocument instance
+       PdfDocument doc = new PdfDocument();
+       //load a PDF sample file
+       doc.loadFromFile("I:\\metlifews\\RPS Course - Selenium for Metlife.pdf");
+       //declare an int variable
+       int index = 0;
+       //loop through all pages
+       for (PdfPageBase page : (Iterable<PdfPageBase>) doc.getPages()) {
+           //extract images  from the given page
+
+            for (BufferedImage image : page.extractImages()) {
+                //specify the file path and name
+                File output = new File("I:\\metlifews\\" + String.format("Image_%d.png", index++));
+                //save images as .png files
+                ImageIO.write(image, "PNG", output);
+
+            }
+
+        }
+
     }
 
 
