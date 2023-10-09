@@ -234,19 +234,15 @@ public class Selenium4Feature {
 
         File file=new File("I:\\metlifews\\employeedata.csv");
         FileWriter fileWriter=new FileWriter(file);
-        CSVWriter csvWriter=new CSVWriter(fileWriter);
-        StringBuffer stringBuffer=new StringBuffer();
         for(int i=0;i<100;i++){
 
-            stringBuffer.append(String.valueOf(new Random().nextInt(10000))+","+"employee"+i+","+
+            fileWriter.write(String.valueOf(new Random().nextInt(10000))+","+"employee"+i+","+
                     LocalDate.of(1990+new Random().nextInt(22),
-                            1+new Random().nextInt(10), 1+new Random().nextInt(25))+"\n");
+                            1+new Random().nextInt(10), 1+new Random().nextInt(25))+"\n" );
+
         }
-        String[] data=new String[] {stringBuffer.toString()};
-        csvWriter.writeNext(data);
-        csvWriter.close();
         fileWriter.close();
-        
+
     }
 
 
