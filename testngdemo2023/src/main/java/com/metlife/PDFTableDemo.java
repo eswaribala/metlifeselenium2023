@@ -135,7 +135,7 @@ public class PDFTableDemo {
             try {
                 isEquals = new PdfComparator(file1, file2)
                         .compare()
-                        .writeTo("I:\\metlifews\\"+"_"+"CompareResult");
+                        .writeTo("I:\\metlifews\\CompareResult");
                 //comparedreport = download_path+getXMLData("ComparePDFResult")+"CompareResult.pdf";
             } catch (IOException e) {
                 // TODO Auto-generated catch block
