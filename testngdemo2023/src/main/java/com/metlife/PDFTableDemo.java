@@ -2,6 +2,7 @@ package com.metlife;
 
 import com.spire.pdf.PdfDocument;
 import com.spire.pdf.PdfPageBase;
+import com.spire.pdf.comparison.PdfComparer;
 import com.spire.pdf.texts.*;
 import com.spire.pdf.utilities.PdfTable;
 import com.spire.pdf.utilities.PdfTableExtractor;
@@ -112,11 +113,18 @@ public class PDFTableDemo {
 
                File file=new File("I:\\metlifews\\images\\" + String.format("Image_%d.png", index++));
                ImageIO.write(bufferedImage,"PNG",file);
-
            }
-
         }
     }
 
+    @Test
+    public void testPDFComparsion(){
+        PdfDocument pdfDocument1=new PdfDocument("I:\\metlifews\\data.pdf");
+        PdfDocument pdfDocument2=new PdfDocument("I:\\metlifews\\RPS Course - Selenium for Metlife.pdf");
+        PdfComparer pdfComparer=new PdfComparer(pdfDocument1,pdfDocument2);
+        pdfComparer.getOptions().setPageRanges(0,pdfDocument1.getPages().getCount()-1,0,pdfDocument2.getPages().getCount()-1);
+        
+        pdfComparer.compare("result.pdf");
+    }
 
 }
