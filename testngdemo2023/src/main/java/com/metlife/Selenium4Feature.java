@@ -251,9 +251,9 @@ public class Selenium4Feature {
         String[] nextRow=null;
         while((nextRow=csvReader.readNext())!=null){
             for(String col : nextRow){
-                System.out.println(col+"\t");
+                System.out.print(col+"\t");
             }
-
+       System.out.println("\n");
         }
         csvReader.close();
         fileReader.close();
