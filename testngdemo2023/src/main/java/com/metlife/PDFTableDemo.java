@@ -7,8 +7,10 @@ import com.spire.pdf.utilities.PdfTable;
 import com.spire.pdf.utilities.PdfTableExtractor;
 import org.testng.annotations.Test;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -91,13 +93,30 @@ public class PDFTableDemo {
             for(PdfTextFragment pdfTextFragment :pdfTextFragmentList){
                 pdfTextFragment.highLight(Color.MAGENTA);
             }
-
         }
-
         pdfDocument.saveToFile("data2023.pdf");
-
     }
 
+    @Test
+    public void testPDFExtractImages() throws IOException {
+
+        ResourceBundle resourceBundle=ResourceBundle.getBundle("file");
+        String dirName=resourceBundle.getString("userdir");
+        String fileName=resourceBundle.getString("pdfimagefilename");
+        PdfDocument pdfDocument=new PdfDocument(".\\"+dirName+"\\"+fileName);
+        Iterator<PdfPageBase> pdfPageBaseIterator= pdfDocument.getPages().iterator();
+        int index=0;
+        while(pdfPageBaseIterator.hasNext()){
+           PdfPageBase pdfPageBase=pdfPageBaseIterator.next();
+           for(BufferedImage bufferedImage: pdfPageBase.extractImages()){
+
+               File file=new File("I:\\metlifews\\images\\" + String.format("Image_%d.png", index++));
+               ImageIO.write(bufferedImage,"PNG",file);
+
+           }
+
+        }
+    }
 
 
 }
