@@ -123,7 +123,9 @@ public class PDFTableDemo {
         PdfDocument pdfDocument2=new PdfDocument("I:\\metlifews\\RPS Course - Selenium for Metlife.pdf");
         PdfComparer pdfComparer=new PdfComparer(pdfDocument1,pdfDocument2);
         pdfComparer.getOptions().setPageRanges(0,pdfDocument1.getPages().getCount()-1,0,pdfDocument2.getPages().getCount()-1);
+        //to compare the entire paage
 
+        //pdfComparer.compare();
     }
 
 }

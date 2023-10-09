@@ -210,6 +210,19 @@ public class Selenium4Feature {
 
 
     }
+    @Test
+    public void testVideo() throws InterruptedException {
+        webDriver=new ChromeDriver();
+        webDriver.get("http://www.w3.org/2010/05/video/mediaevents.html");
+        webElement=webDriver.findElement(By.tagName("video"));
+        webElement.click();
+        JavascriptExecutor javascriptExecutor= (JavascriptExecutor) webDriver;
+        javascriptExecutor.executeScript("arguments[0].play()",webElement);
+        Thread.sleep(2000);
+        javascriptExecutor.executeScript("arguments[0].pause()",webElement);
+
+
+    }
 
 
 
