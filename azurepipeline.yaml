@@ -1,0 +1,26 @@
+pool:
+  name: windowagentv1
+  demands: maven
+
+steps:
+- task: Maven@3
+  displayName: 'Maven Project'
+  inputs:
+    mavenPomFile: testngdemo2023/pom.xml
+    goals: 'clean test -Dsurefire.suiteXmlFiles=testng.xml'
+    testRunTitle: 'Metlife Selenium Tests'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.jar'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
