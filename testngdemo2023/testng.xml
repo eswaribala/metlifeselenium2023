@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="I:/metlifews/testngdemo2023">
+    <test verbose="2" preserve-order="true" name="testngscenario">
         <classes>
-            <class name="com.metlife.AppTest">
-                <methods>
-                    <include name="shouldAnswerWithTrue"/>
-                </methods>
-            </class>
+            <class name="com.metlife.App"/>
+            <!--<class name="com.metlife.AutoITDemo"/>
+            <class name="com.metlife.ExcelAsposeDemo"/>
+            <class name="com.metlife.PDFTableDemo"/>
+            <class name="com.metlife.Selenium4Feature"/>-->
+
         </classes>
     </test>
 </suite>

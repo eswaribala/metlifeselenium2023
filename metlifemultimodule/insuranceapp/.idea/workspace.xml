@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6721a21d-a269-440f-971c-eaea65f8116c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homeinsurance/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homeinsurance/src/main/java/com/metlife/HomeInsuranceApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homeinsurance/src/test/java/com/metlife/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/metlife/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/metlife/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vehicleinsurance/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vehicleinsurance/src/main/java/com/metlife/VehicleInsuranceApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vehicleinsurance/src/test/java/com/metlife/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/assetapp/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/assetapp/src/main/java/com/metlife/AssetApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/assetapp/src/test/java/com/metlife/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/netbanking/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/netbanking/src/main/java/com/metlife/NetBankingApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/netbanking/src/test/java/com/metlife/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/src/main/java/com/metlife/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/src/test/java/com/metlife/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../employeedata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../employeedata.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/src/main/java/com/metlife/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/src/main/java/com/metlife/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/classes/com/metlife/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/target/classes/com/metlife/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/test-classes/com/metlife/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/target/test-classes/com/metlife/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/testngdemo2023-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/testng.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/homeinsurance/src/main/java/com/metlife/HomeInsuranceApp.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/metlife/App.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/vehicleinsurance/src/main/java/com/metlife/VehicleInsuranceApp.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2WYxr2ID9zoUmgw0Cpu22TpWrr5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "I:/metlifews/metlifemultimodule/insuranceapp/testng.xml",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\metlifews\metlifemultimodule\insuranceapp\homeinsurance" />
+      <recent name="I:\metlifews\metlifemultimodule\insuranceapp\vehicleinsurance" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install -DskipTests" />
+      <command value="mvn clean test -Dsurefire.suiteXmlFiles=testng.xml" />
+    </option>
+  </component>
+  <component name="RunManager" selected="TestNG.I:/metlifews/metlifemultimodule/insuranceapp/testng.xml">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.metlife.App" />
+      <module name="insuranceapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.metlife.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="I:/metlifews/metlifemultimodule/insuranceapp/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="insuranceapp" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.metlife.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="TestNG.I:/metlifews/metlifemultimodule/insuranceapp/testng.xml" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.I:/metlifews/metlifemultimodule/insuranceapp/testng.xml" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6721a21d-a269-440f-971c-eaea65f8116c" name="Changes" comment="" />
+      <created>1696923509842</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696923509842</updated>
+      <workItem from="1696923511386" duration="2737000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-10-09T17:34:36 IST" name="All Test Suite" finished-at="2023-10-09T17:35:05 IST" duration-ms="28947">
+    <groups>
+    </groups>
+    <test started-at="2023-10-09T17:34:36 IST" name="testngscenario" finished-at="2023-10-09T17:35:05 IST" duration-ms="28947">
+      <class name="com.metlife.App">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.metlife.App@f0c8a99]" started-at="2023-10-09T17:34:36 IST" name="browserSetup" finished-at="2023-10-09T17:34:44 IST" duration-ms="7406" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="testLoginForm(com.metlife.models.User)[pri:0, instance:com.metlife.App@f0c8a99]" started-at="2023-10-09T17:34:44 IST" name="testLoginForm" data-provider="userData" finished-at="2023-10-09T17:34:51 IST" duration-ms="7591" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User(userName=user0, password=pass70058)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginForm -->
+        <test-method signature="testLoginForm(com.metlife.models.User)[pri:0, instance:com.metlife.App@f0c8a99]" started-at="2023-10-09T17:34:51 IST" name="testLoginForm" data-provider="userData" finished-at="2023-10-09T17:34:54 IST" duration-ms="2474" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User(userName=user1, password=pass52103)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginForm -->
+        <test-method signature="testLoginForm(com.metlife.models.User)[pri:0, instance:com.metlife.App@f0c8a99]" started-at="2023-10-09T17:34:54 IST" name="testLoginForm" data-provider="userData" finished-at="2023-10-09T17:34:56 IST" duration-ms="2649" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User(userName=user2, password=pass90070)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginForm -->
+        <test-method signature="testLoginForm(com.metlife.models.User)[pri:0, instance:com.metlife.App@f0c8a99]" started-at="2023-10-09T17:34:56 IST" name="testLoginForm" data-provider="userData" finished-at="2023-10-09T17:35:00 IST" duration-ms="3382" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User(userName=user3, password=pass35605)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginForm -->
+        <test-method signature="testLoginForm(com.metlife.models.User)[pri:0, instance:com.metlife.App@f0c8a99]" started-at="2023-10-09T17:35:00 IST" name="testLoginForm" data-provider="userData" finished-at="2023-10-09T17:35:02 IST" duration-ms="2209" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User(userName=user4, password=pass38943)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginForm -->
+        <test-method signature="testTitle()[pri:0, instance:com.metlife.App@f0c8a99]" started-at="2023-10-09T17:35:02 IST" name="testTitle" finished-at="2023-10-09T17:35:05 IST" duration-ms="3138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTitle -->
+      </class> <!-- com.metlife.App -->
+    </test> <!-- testngscenario -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

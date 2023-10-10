@@ -1,4 +1,7 @@
-com\metlife\Selenium4Fetaure.class
+com\metlife\AutoITDemo.class
+com\metlife\Selenium4Feature.class
+com\metlife\ExcelAsposeDemo.class
 com\metlife\App.class
 com\metlife\models\User.class
+com\metlife\PDFTableDemo.class
 com\metlife\dao\AppDao.class
