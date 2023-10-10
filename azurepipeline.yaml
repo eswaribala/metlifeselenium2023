@@ -8,7 +8,6 @@ steps:
   inputs:
     mavenPomFile: testngdemo2023/pom.xml
     goals: 'clean test -Dsurefire.suiteXmlFiles=testng.xml'
-    testRunTitle: 'Metlife Selenium Tests'
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
@@ -17,6 +16,14 @@ steps:
     Contents: '**/*.jar'
     TargetFolder: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: results'
+  inputs:
+    PathtoPublish: testngdemo2023/reports
+    ArtifactName: results
+  condition: succeededOrFailed()
+
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
