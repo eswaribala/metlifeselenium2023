@@ -33,7 +33,10 @@ public class RestAssuredDemo {
     @Test
     public void test1() {
 
-        given().get("https://reqres.in/api/users?page=2").then().statusCode(200).body("data.id[0]", equalTo(7));
+        given().get("https://reqres.in/api/users?page=2")
+                .then().
+                statusCode(200)
+                .body("data.id[0]", equalTo(7));
 
     }
 
