@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 30, Failures: 2, Errors: 0, Skipped: 10, Time elapsed: 175.57 s <<< FAILURE! - in TestSuite
+testAjaxCall(com.metlife.Selenium4Feature)  Time elapsed: 8.439 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=117.0.5938.150)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5c399c20eba0d99741db0571cd1b5d45, get {url=http://localhost:63343/hsbcuitraining2023/bankapp/showusers.html}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.150, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55300}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55300/devtoo..., se:cdpVersion: 117.0.5938.150, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c399c20eba0d99741db0571cd1b5d45
+	at com.metlife.Selenium4Feature.testAjaxCall(Selenium4Feature.java:167)
+
+testOrXpath(com.metlife.Selenium4Feature)  Time elapsed: 0.009 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at com.metlife.Selenium4Feature.testOrXpath(Selenium4Feature.java:81)
+

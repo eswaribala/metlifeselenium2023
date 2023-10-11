@@ -22,7 +22,7 @@ public class HomeInsuranceApp
 
     @Test
     public void testGoogle(){
-        webDriver.get("https://www.rediffmail.com");
+        webDriver.get("https://www.rediffmail123.com");
         webDriver.quit();
     }
 

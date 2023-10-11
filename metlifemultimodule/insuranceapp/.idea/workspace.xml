@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6721a21d-a269-440f-971c-eaea65f8116c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../employeedata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../employeedata.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/src/main/java/com/metlife/HomeInsuranceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/src/main/java/com/metlife/HomeInsuranceApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TestSuite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/junitreports/TEST-com.metlife.HomeInsuranceApp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/junitreports/TEST-com.metlife.HomeInsuranceApp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/All Test Suite/vehicleinsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/All Test Suite/vehicleinsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/All Test Suite/vehicleinsurance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/All Test Suite/vehicleinsurance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/TestSuite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/junitreports/TEST-com.metlife.VehicleInsuranceApp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/junitreports/TEST-com.metlife.VehicleInsuranceApp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/old/All Test Suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/old/All Test Suite/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/old/All Test Suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/old/All Test Suite/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/testng-results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +138,7 @@
       <updated>1696923509842</updated>
       <workItem from="1696923511386" duration="3263000" />
       <workItem from="1696943893394" duration="9000" />
+      <workItem from="1697003977695" duration="433000" />
     </task>
     <servers />
   </component>

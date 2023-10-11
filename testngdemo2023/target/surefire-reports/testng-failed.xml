@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="testngscenario(failed)" verbose="0">
+    <classes>
+      <class name="com.metlife.Selenium4Feature">
+        <methods>
+          <include name="testOrXpath"/>
+          <include name="setup"/>
+          <include name="testAjaxCall"/>
+        </methods>
+      </class> <!-- com.metlife.Selenium4Feature -->
+    </classes>
+  </test> <!-- testngscenario(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
