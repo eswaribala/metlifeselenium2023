@@ -20,7 +20,7 @@ public class HomeInsuranceApp
 
    }
 
-    @Test
+    @Test(retryAnalyzer = com.metlife.listeners.RetryListener.class)
     public void testGoogle(){
         webDriver.get("https://www.rediffmail123.com");
         webDriver.quit();
