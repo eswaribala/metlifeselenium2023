@@ -6,8 +6,8 @@
             <class name="com.metlife.App"/>
             <!--<class name="com.metlife.AutoITDemo"/>
             <class name="com.metlife.ExcelAsposeDemo"/>
-            <class name="com.metlife.PDFTableDemo"/>
-            <class name="com.metlife.Selenium4Feature"/>-->
+            <class name="com.metlife.PDFTableDemo"/>-->
+            <class name="com.metlife.Selenium4Feature"/>
 
         </classes>
     </test>

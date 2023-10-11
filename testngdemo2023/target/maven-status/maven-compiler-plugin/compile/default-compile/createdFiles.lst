@@ -4,4 +4,5 @@ com\metlife\ExcelAsposeDemo.class
 com\metlife\App.class
 com\metlife\models\User.class
 com\metlife\PDFTableDemo.class
+com\metlife\listeners\RetryAnalyzer.class
 com\metlife\dao\AppDao.class

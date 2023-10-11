@@ -5,47 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6721a21d-a269-440f-971c-eaea65f8116c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homeinsurance/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homeinsurance/src/main/java/com/metlife/HomeInsuranceApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homeinsurance/src/test/java/com/metlife/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/metlife/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/metlife/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicleinsurance/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicleinsurance/src/main/java/com/metlife/VehicleInsuranceApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vehicleinsurance/src/test/java/com/metlife/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/assetapp/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/assetapp/src/main/java/com/metlife/AssetApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/assetapp/src/test/java/com/metlife/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/netbanking/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/netbanking/src/main/java/com/metlife/NetBankingApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/netbanking/src/test/java/com/metlife/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/src/main/java/com/metlife/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../multimodule/bankinapp/src/test/java/com/metlife/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../employeedata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../employeedata.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/src/main/java/com/metlife/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/src/main/java/com/metlife/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/classes/com/metlife/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/target/classes/com/metlife/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/test-classes/com/metlife/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/target/test-classes/com/metlife/AppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/target/testngdemo2023-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../testngdemo2023/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../testngdemo2023/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,18 +29,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "I:/metlifews/metlifemultimodule/insuranceapp/testng.xml",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;I:/metlifews/metlifemultimodule/insuranceapp/testng.xml&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="I:\metlifews\metlifemultimodule\insuranceapp\homeinsurance" />
@@ -151,7 +111,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696923509842</updated>
-      <workItem from="1696923511386" duration="2737000" />
+      <workItem from="1696923511386" duration="3263000" />
+      <workItem from="1696943893394" duration="9000" />
     </task>
     <servers />
   </component>
