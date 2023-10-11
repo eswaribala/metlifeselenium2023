@@ -39,6 +39,16 @@ public class RestAssuredDemo {
     }
 
 
+    @Test
+    public void testRestCountriesSize(){
+
+        given()
+                .when()
+                .get("https://restcountries.com/v2/all")
+                .then()
+                .assertThat()
+                .body("size()",greaterThan(100));
+    }
 
 
 
