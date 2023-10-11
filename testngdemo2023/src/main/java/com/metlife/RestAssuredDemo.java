@@ -2,7 +2,7 @@ package com.metlife;
 
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
 
 public class RestAssuredDemo {
 
@@ -25,6 +25,22 @@ public class RestAssuredDemo {
                 .assertThat()
                 .body("id",hasSize(10));
     }
+
+
+    @Test
+    public void testRestCountriesName(){
+
+        given()
+                .when()
+                .get("https://restcountries.com/v2/all")
+                .then()
+                .assertThat()
+                .body("data[0].name",equalTo("Afghanistan"));
+    }
+
+
+
+
 
 
 }
