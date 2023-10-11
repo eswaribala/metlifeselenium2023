@@ -35,7 +35,7 @@ public class RestAssuredDemo {
                 .get("https://restcountries.com/v2/all")
                 .then()
                 .assertThat()
-                .body("data[0].name",equalTo("Afghanistan"));
+                .body("[0].name",equalTo("Afghanistan"));
     }
 
 
