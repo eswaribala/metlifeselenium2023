@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in AppTest
+AppTest  Time elapsed: 0.003 s  <<< ERROR!
+org.junit.platform.suite.engine.NoTestsDiscoveredException: Suite [com.metlife.AppTest] did not discover any tests
+

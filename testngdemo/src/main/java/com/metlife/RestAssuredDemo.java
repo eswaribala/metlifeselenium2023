@@ -1,13 +1,23 @@
 package com.metlife;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.metlife.models.Customer;
 import io.restassured.http.ContentType;
+import io.restassured.internal.path.xml.NodeChildrenImpl;
 import org.json.simple.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasItems;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class RestAssuredDemo {
@@ -194,4 +204,59 @@ public class RestAssuredDemo {
                 assertThat().
                 body("MRData.CircuitTable.Circuits.circuitId",hasSize(numberOfRaces));
     }
+
+
+
+    @Test
+    public void createCustomerWithXMLObject_thenSuccess() throws JsonProcessingException {
+
+        Customer customer=new Customer();
+        customer.setCustomerId(new Random().nextInt(100000));
+        customer.setFirstName("Parameswari");
+        customer.setLastName("Bala");
+        customer.setDob(new Date(1900+new Random().nextInt(110),
+                1+new Random().nextInt(10),1+new Random().nextInt(25)));
+        customer.setMobileNo(124543556546L);
+        String newCustomerXml = new XmlMapper().writeValueAsString(customer);
+
+       String customerId= given()
+                .body(newCustomerXml)
+                .contentType("application/xml")
+                .accept(ContentType.XML)
+               // .queryParam("access-token", "xxxx")
+                .when()
+                .post("http://localhost:7070/customers/v1.0/")
+                .then()
+                .statusCode(202)
+                .extract()
+                .path("customer.customerId");
+
+         Assert.assertTrue(Integer.parseInt(customerId)>0);
+    }
+
+
+    @Test
+    public void getCustomerWithXMLObject_whenSuccess()  {
+        given().when()
+                .get("http://localhost:7070/customers/v1.0/")
+                .then()
+                .body("List.item[1].customerId",equalTo("11"));
+    }
+
+    @Test
+    public void validateFoodItems() {
+        NodeChildrenImpl customers=  given()
+                .when()
+                .get("http://localhost:7070/customers/v1.0/")
+                .then()
+                .extract()
+                .path("List.item.customerId");
+        System.out.println(customers);
+        assertThat(customers,hasItems("10","11","23179"));
+    }
+
+
+
 }
+
+
