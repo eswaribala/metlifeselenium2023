@@ -7,17 +7,40 @@
     <list default="true" id="6721a21d-a269-440f-971c-eaea65f8116c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homeinsurance/src/main/java/com/metlife/HomeInsuranceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/src/main/java/com/metlife/HomeInsuranceApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TestSuite.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/emailable-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/junitreports/TEST-com.metlife.HomeInsuranceApp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/junitreports/TEST-com.metlife.HomeInsuranceApp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods-alphabetical.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/homeinsurance.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/All Test Suite/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/TestSuite.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/bullet_point.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/collapseall.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/emailable-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/failed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/junitreports/TEST-com.metlife.HomeInsuranceApp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/navigator-bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/groups.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/homeinsurance.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods-alphabetical.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods-not-run.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/methods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/reporter-output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/testng.xml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/All Test Suite/toc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/old/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/passed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/skipped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-reports.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-reports.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-reports1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-reports2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng-results.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeinsurance/target/surefire-reports/testng.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/All Test Suite/vehicleinsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/All Test Suite/vehicleinsurance.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/All Test Suite/vehicleinsurance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/All Test Suite/vehicleinsurance.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vehicleinsurance/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
@@ -58,18 +81,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;I:/metlifews/metlifemultimodule/insuranceapp/testng.xml&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "I:/metlifews/metlifemultimodule/insuranceapp/pom.xml",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="I:\metlifews\metlifemultimodule\insuranceapp\homeinsurance" />
@@ -143,6 +166,7 @@
       <workItem from="1696923511386" duration="3263000" />
       <workItem from="1696943893394" duration="9000" />
       <workItem from="1697003977695" duration="1888000" />
+      <workItem from="1697093607861" duration="421000" />
     </task>
     <servers />
   </component>

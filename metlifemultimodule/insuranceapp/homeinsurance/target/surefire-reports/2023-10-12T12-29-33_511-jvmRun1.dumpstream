@@ -1,23 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="https://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<title>TestNG Report</title>
-<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
-</head>
-<body>
-<table>
-<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">All Test Suite</th></tr>
-<tr><td><a href="#t0">homeinsurance</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num attn">1</td><td class="num">46,786</td><td></td><td></td></tr>
-</table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">All Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">homeinsurance &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.metlife.HomeInsuranceApp</td><td><a href="#m0">testGoogle</a></td><td rowspan="1">1697094035165</td><td rowspan="1">19</td></tr><tr><th colspan="4">homeinsurance &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="3">com.metlife.HomeInsuranceApp</td><td><a href="#m1">testGoogle</a></td><td rowspan="3">1697094004649</td><td rowspan="3">30513</td></tr><tr class="retriedeven"><td><a href="#m2">testGoogle</a></td></tr><tr class="retriedeven"><td><a href="#m3">testGoogle</a></td></tr></tbody>
-</table>
-<h2>homeinsurance</h2><h3 id="m0">com.metlife.HomeInsuranceApp#testGoogle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+# Created at 2023-10-12T12:30:24.536
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+# Created at 2023-10-12T12:30:35.163
+Unexpected IOException: 9,1,com.metlife.HomeInsuranceApp,testGoogle(com.metlife.HomeInsuranceApp),null,no such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=117.0.5938.150)\000ABuild info: version: '4.13.0'\002C revision: 'ba948ece5b*'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.15'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [9aa7d96a9689034571a645afa5ee0a39\002C findElement {using=xpath\002C value=//*[@id="OAS_subsection1"]}]\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 117.0.5938.150\002C chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1...\002C userDataDir: C:\005CWINDOWS\005CSystemTemp\005Cscope...}\002C fedcm:accounts: true\002C goog:chromeOptions: {debuggerAddress: localhost:54156}\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platformName: windows\002C proxy: Proxy()\002C se:cdp: ws://localhost:54156/devtoo...\002C se:cdpVersion: 117.0.5938.150\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:credBlob: true\002C webauthn:extension:largeBlob: true\002C webauthn:extension:minPinLength: true\002C webauthn:extension:prf: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: 9aa7d96a9689034571a645afa5ee0a39,null
+
+
+# Created at 2023-10-12T12:30:35.166
+Unexpected IOException: 5,1,com.metlife.HomeInsuranceApp,testGoogle(com.metlife.HomeInsuranceApp),com.metlife.HomeInsuranceApp,null,null
+
+
+# Created at 2023-10-12T12:30:35.208
+Unexpected IOException: 8,1,com.metlife.HomeInsuranceApp,testGoogle(com.metlife.HomeInsuranceApp),null,no such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=117.0.5938.150)\000ABuild info: version: '4.13.0'\002C revision: 'ba948ece5b*'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.15'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [9aa7d96a9689034571a645afa5ee0a39\002C get {url=https://www.rediffmail.com}]\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 117.0.5938.150\002C chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1...\002C userDataDir: C:\005CWINDOWS\005CSystemTemp\005Cscope...}\002C fedcm:accounts: true\002C goog:chromeOptions: {debuggerAddress: localhost:54156}\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platformName: windows\002C proxy: Proxy()\002C se:cdp: ws://localhost:54156/devtoo...\002C se:cdpVersion: 117.0.5938.150\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:credBlob: true\002C webauthn:extension:largeBlob: true\002C webauthn:extension:minPinLength: true\002C webauthn:extension:prf: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: 9aa7d96a9689034571a645afa5ee0a39,null,no such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=117.0.5938.150)\000ABuild info: version: '4.13.0'\002C revision: 'ba948ece5b*'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.15'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [9aa7d96a9689034571a645afa5ee0a39\002C get {url=https://www.rediffmail.com}]\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 117.0.5938.150\002C chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1...\002C userDataDir: C:\005CWINDOWS\005CSystemTemp\005Cscope...}\002C fedcm:accounts: true\002C goog:chromeOptions: {debuggerAddress: localhost:54156}\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platformName: windows\002C proxy: Proxy()\002C se:cdp: ws://localhost:54156/devtoo...\002C se:cdpVersion: 117.0.5938.150\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:credBlob: true\002C webauthn:extension:largeBlob: true\002C webauthn:extension:minPinLength: true\002C webauthn:extension:prf: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: 9aa7d96a9689034571a645afa5ee0a39,HomeInsuranceApp.testGoogle:28 \00BB NoSuchWindow no such window: target window al...,org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=117.0.5938.150)\000ABuild info: version: '4.13.0'\002C revision: 'ba948ece5b*'\000ASystem info: os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.15'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACommand: [9aa7d96a9689034571a645afa5ee0a39\002C get {url=https://www.rediffmail.com}]\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 117.0.5938.150\002C chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1...\002C userDataDir: C:\005CWINDOWS\005CSystemTemp\005Cscope...}\002C fedcm:accounts: true\002C goog:chromeOptions: {debuggerAddress: localhost:54156}\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platformName: windows\002C proxy: Proxy()\002C se:cdp: ws://localhost:54156/devtoo...\002C se:cdpVersion: 117.0.5938.150\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:credBlob: true\002C webauthn:extension:largeBlob: true\002C webauthn:extension:minPinLength: true\002C webauthn:extension:prf: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: 9aa7d96a9689034571a645afa5ee0a39\000A\0009at com.metlife.HomeInsuranceApp.testGoogle(HomeInsuranceApp.java:28)\000A
+
+
+# Created at 2023-10-12T12:30:35.228
+Unexpected IOException with stream: FAILED: com.metlife.HomeInsuranceApp.testGoogle
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=117.0.5938.150)
-Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.15&apos;
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Command: [9aa7d96a9689034571a645afa5ee0a39, get {url=https://www.rediffmail.com}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.150, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54156}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54156/devtoo..., se:cdpVersion: 117.0.5938.150, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
@@ -68,14 +76,21 @@ Session ID: 9aa7d96a9689034571a645afa5ee0a39
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.metlife.HomeInsuranceApp#testGoogle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+
+
+# Created at 2023-10-12T12:30:35.236
+Unexpected IOException with stream: 
+
+
+# Created at 2023-10-12T12:30:35.247
+Unexpected IOException with stream: RETRIED: com.metlife.HomeInsuranceApp.testGoogle
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 from unknown error: web view not found
   (Session info: chrome=117.0.5938.150)
-Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.15&apos;
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9aa7d96a9689034571a645afa5ee0a39, findElement {using=xpath, value=//*[@id=&quot;OAS_subsection1&quot;]}]
+Command: [9aa7d96a9689034571a645afa5ee0a39, findElement {using=xpath, value=//*[@id="OAS_subsection1"]}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.150, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54156}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54156/devtoo..., se:cdpVersion: 117.0.5938.150, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: 9aa7d96a9689034571a645afa5ee0a39
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -126,14 +141,21 @@ Session ID: 9aa7d96a9689034571a645afa5ee0a39
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.metlife.HomeInsuranceApp#testGoogle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;OAS_subsection1&quot;]&quot;}
+
+
+# Created at 2023-10-12T12:30:35.254
+Unexpected IOException with stream: 
+
+
+# Created at 2023-10-12T12:30:35.272
+Unexpected IOException with stream: RETRIED: com.metlife.HomeInsuranceApp.testGoogle
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="OAS_subsection1"]"}
   (Session info: chrome=117.0.5938.150)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.15&apos;
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9aa7d96a9689034571a645afa5ee0a39, findElement {using=xpath, value=//*[@id=&quot;OAS_subsection1&quot;]}]
+Command: [9aa7d96a9689034571a645afa5ee0a39, findElement {using=xpath, value=//*[@id="OAS_subsection1"]}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.150, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54156}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54156/devtoo..., se:cdpVersion: 117.0.5938.150, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: 9aa7d96a9689034571a645afa5ee0a39
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -184,14 +206,21 @@ Session ID: 9aa7d96a9689034571a645afa5ee0a39
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.metlife.HomeInsuranceApp#testGoogle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;OAS_subsection1&quot;]&quot;}
+
+
+# Created at 2023-10-12T12:30:35.275
+Unexpected IOException with stream: 
+
+
+# Created at 2023-10-12T12:30:35.281
+Unexpected IOException with stream: RETRIED: com.metlife.HomeInsuranceApp.testGoogle
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="OAS_subsection1"]"}
   (Session info: chrome=117.0.5938.150)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.15&apos;
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9aa7d96a9689034571a645afa5ee0a39, findElement {using=xpath, value=//*[@id=&quot;OAS_subsection1&quot;]}]
+Command: [9aa7d96a9689034571a645afa5ee0a39, findElement {using=xpath, value=//*[@id="OAS_subsection1"]}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.150, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54156}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54156/devtoo..., se:cdpVersion: 117.0.5938.150, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: 9aa7d96a9689034571a645afa5ee0a39
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -242,6 +271,53 @@ Session ID: 9aa7d96a9689034571a645afa5ee0a39
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-</body>
-</html>
+
+
+# Created at 2023-10-12T12:30:35.283
+Unexpected IOException with stream: 
+
+
+# Created at 2023-10-12T12:30:35.286
+Unexpected IOException with stream: 
+===============================================
+    homeinsurance
+    Tests run: 1, Failures: 1, Skips: 0, Retries: 3
+===============================================
+
+
+# Created at 2023-10-12T12:30:35.287
+Unexpected IOException with stream: 
+
+
+# Created at 2023-10-12T12:30:35.466
+Unexpected IOException with stream: [main] INFO org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.SuiteHTMLReporter@351e414e: 45 ms
+
+
+# Created at 2023-10-12T12:30:35.639
+Unexpected IOException with stream: [main] INFO org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.jq.Main@22367b8: 170 ms
+
+
+# Created at 2023-10-12T12:30:35.668
+Unexpected IOException with stream: [main] INFO org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.FailedReporter@7048535f: 29 ms
+
+
+# Created at 2023-10-12T12:30:35.701
+Unexpected IOException with stream: [main] INFO org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.XMLReporter@37191ef0: 30 ms
+
+
+# Created at 2023-10-12T12:30:35.722
+Unexpected IOException with stream: [main] INFO org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@3f93e4a8: 19 ms
+
+
+# Created at 2023-10-12T12:30:35.741
+Unexpected IOException with stream: [main] INFO org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@468be356: 17 ms
+
+
+# Created at 2023-10-12T12:30:35.742
+Unexpected IOException with stream: [main] INFO org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@5c9ac4cc: 0 ms
+
+
+# Created at 2023-10-12T12:30:35.743
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGXmlTestSuite,TestSuite,null,null,null
+
+
