@@ -29,7 +29,7 @@ public class PolicyHolderController {
 
     }
 
-    @GetMapping("/v1.0/")
+    @GetMapping(value = "/v1.0/",produces = MediaType.APPLICATION_XML_VALUE)
     public List<PolicyHolder> getPolicyHolders(){
         return policyHolderService.getAllPolicyHolders();
     }
