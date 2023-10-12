@@ -13,15 +13,15 @@ import java.util.Date;
 @NoArgsConstructor
 @JacksonXmlRootElement(localName = "PolicyHolder")
 public class PolicyHolder {
-    @JacksonXmlProperty(localName = "PolicyNo")
+    @JacksonXmlProperty(localName = "policyNo")
     private long policyNo;
-    @JacksonXmlProperty(localName = "FirstName")
+    @JacksonXmlProperty(localName = "firstName")
     private String firstName;
-    @JacksonXmlProperty(localName = "LastName")
+    @JacksonXmlProperty(localName = "lastName")
     private String lastName;
-    @JacksonXmlProperty(localName = "DOB")
+    @JacksonXmlProperty(localName = "dob")
     private Date dob;
-    @JacksonXmlProperty(localName = "MobileNo")
+    @JacksonXmlProperty(localName = "mobileNo")
     private long mobileNo;
 
 }
