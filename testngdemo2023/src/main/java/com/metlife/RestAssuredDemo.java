@@ -1,6 +1,9 @@
 package com.metlife;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.metlife.models.PolicyHolder;
+import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
 import java.util.Date;
@@ -57,7 +60,7 @@ public class RestAssuredDemo {
 
 
     @Test
-    public void testAddPolicyHolder(){
+    public void testAddPolicyHolder() throws JsonProcessingException {
 
         PolicyHolder policyHolder=new PolicyHolder();
         policyHolder.setPolicyNo(101);
@@ -66,10 +69,12 @@ public class RestAssuredDemo {
         policyHolder.setDob(new Date(1900+new Random().nextInt(120),
                 1+new Random().nextInt(10),1+new Random().nextInt(25) ));
         policyHolder.setMobileNo(12435356667L);
+        String newPolicyHolderXml = new XmlMapper().writeValueAsString(policyHolder);
 
         given()
-                .body(policyHolder)
+                .body(newPolicyHolderXml)
                 .contentType("application/xml")
+                .accept(ContentType.XML)
                 .when()
                 .post("http://localhost:7072/policyholders/v1.0/")
                 .then()
