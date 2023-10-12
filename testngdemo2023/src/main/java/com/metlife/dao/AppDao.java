@@ -3,16 +3,14 @@ package com.metlife.dao;
 import com.metlife.helpers.MysqlHelper;
 import com.metlife.models.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.*;
 
 public class AppDao {
 
         private static Connection conn;
         private static Statement statement;
+        private static PreparedStatement preparedStatement;
 
         private static ResourceBundle resourceBundle;
         private static ResultSet resultSet;
@@ -34,7 +32,18 @@ public class AppDao {
          System.out.println(users.size());
          return users;
         }
+    public static User getUser(String username) throws SQLException {
+        conn= MysqlHelper.getConnection();
+        resourceBundle=ResourceBundle.getBundle("db");
+        String query = resourceBundle.getString("specificuserquery");
+      preparedStatement=conn.prepareStatement(query);
+      preparedStatement.setString(1,username);
+        resultSet = preparedStatement.executeQuery();
+       resultSet.next();
+       return new User(resultSet.getString(1).toString(),resultSet.getString(2).toString());
 
+
+    }
 
 
     public static List<User> generateUsers(){
