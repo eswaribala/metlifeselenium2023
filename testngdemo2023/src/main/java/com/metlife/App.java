@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.sql.SQLException;
 import java.time.Duration;
 import java.util.*;
 
@@ -67,7 +68,21 @@ public class App
 
     }
 
+    @Test(dataProvider = "userData123")
+    public void testLoginFormUsingTable(User user)  {
 
+        System.out.println(user.getUserName()+","+user.getPassword());
+       /* webDriver.get("https://demo.guru99.com/test/newtours/index.php");
+        webDriver.findElement(By.xpath("//input[@name='userName']")).sendKeys(user.getUserName());
+        webDriver.findElement(By.xpath("//input[@name='password']")).sendKeys(user.getPassword());
+        webDriver.findElement(By.xpath("//input[@name='submit']")).click();
+        //explicit wait
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
+        WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Enter your userName and password correct')]")));
+        System.out.println(webElement.getText());
+        assertEquals("Enter your userName and password correct",  webElement.getText());*/
+
+    }
 
    @DataProvider(name = "userData")
     public Object[][] fetchData(){
@@ -87,4 +102,10 @@ public class App
 
     }
 
+    @DataProvider(name = "userData123")
+    public Iterator<User> fetchDataFromTable() throws SQLException {
+
+        return AppDao.getUsers().iterator();
+
+    }
 }
