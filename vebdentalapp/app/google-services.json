@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "432046125966",
+    "firebase_url": "https://vebdentalcare-288419.firebaseio.com",
+    "project_id": "vebdentalcare-288419",
+    "storage_bucket": "vebdentalcare-288419.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432046125966:android:b7a5360e22a70dcc1beadf",
+        "android_client_info": {
+          "package_name": "com.example.vebdentalcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432046125966-ndu4oiha7puoc5phf12p2d7ftb281697.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vebdentalcare",
+            "certificate_hash": "d76922bb2aa3c477388cc626e131cb9befc17ca1"
+          }
+        },
+        {
+          "client_id": "432046125966-d15jhqjvv35n5uccl49oi4lplcpj758a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFoxLC-VwqnHt_DJ5q0vwt2mjVx6zm8pI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432046125966-d15jhqjvv35n5uccl49oi4lplcpj758a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
