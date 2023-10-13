@@ -1,0 +1,17 @@
+Appium Server
+https://github.com/appium/appium-desktop/releases
+
+Appium Inspector
+https://github.com/appium/appium-inspector/releases
+
+adb devices
+C:\Users\Balasubramaniam\AppData\Local\Android\Sdk\platform-tools
+
+
+install appium server from nodejs
+
+npm install -g appium
+appium driver install uiautomator2
+
+to start the server
+appium server -p 4723 -a 127.0.0.1 -pa /wd/hub
