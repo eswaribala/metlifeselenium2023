@@ -17,11 +17,11 @@ public class CanadaPhoneNumberNotFoundTest {
     private WebDriver webDriver;
     private WebElement webElement;
 
-    @Given("Visit www.canada411.ca, Find people Phone number text box, enter non existing phone number")
-    public void testVisitWebSite(){
+    @Given("Visit www.canada411.ca, Find people Phone number text box, enter non existing phone number \\\"(.*)\\\" ")
+    public void testVisitWebSite(String phoneNumber){
         webDriver=new EdgeDriver();
         webDriver.get("https://www.canada411.ca/");
-        webDriver.findElement(By.id("c411PeopleReverseWhat")).sendKeys("647-846-8449");
+        webDriver.findElement(By.id("c411PeopleReverseWhat")).sendKeys(phoneNumber);
 
         }
 
