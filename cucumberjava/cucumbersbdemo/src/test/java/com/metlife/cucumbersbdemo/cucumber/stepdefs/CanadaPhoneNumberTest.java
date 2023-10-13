@@ -27,7 +27,7 @@ public class CanadaPhoneNumberTest {
     public void  testSearchButton(){
 
         webDriver.findElement(By.id("c411PeopleReverseFind")).click();
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
 
     }
 
