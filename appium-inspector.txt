@@ -1,0 +1,6 @@
+{
+  "appium:vebdentalcareapp": "F:\\vebdentalapp\\app\\release\\app-release.apk",
+  "appium:devicename": "emulator-5554",
+  "platformName": "android",
+  "automationName": "uiautomator2"
+}
