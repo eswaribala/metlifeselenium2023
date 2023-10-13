@@ -15,7 +15,7 @@ import static io.cucumber.core.options.Constants.GLUE_PROPERTY_NAME;
 //@IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ExcludeTags("ValidPhoneNumber")
-@IncludeTags("InValidPhoneNumber")
+@IncludeTags({"InValidPhoneNumber","UploadFile"})
 //@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.metlife.cucumberspringdemo",tags="@InValidPhoneNumber")
 public class CucumberTest {
 }
