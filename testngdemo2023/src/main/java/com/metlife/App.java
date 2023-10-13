@@ -69,7 +69,7 @@ public class App
     }
 
     @Test
-    public void testpecificUser() throws SQLException {
+    public void testSpecificUser() throws SQLException {
        User user= AppDao.getUser("user1");
        if(user!=null)
            System.out.println(user.getUserName()+","+user.getPassword());
