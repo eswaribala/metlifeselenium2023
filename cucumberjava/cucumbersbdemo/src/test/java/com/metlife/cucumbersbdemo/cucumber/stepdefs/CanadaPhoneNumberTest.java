@@ -17,7 +17,7 @@ public class CanadaPhoneNumberTest {
     private WebDriver webDriver;
     private WebElement webElement;
 
-    @Given("Visit https://www.canada411.ca/, Find people Phone number text box, enter phone number")
+    @Given("Visit www.canada411.ca, Find people Phone number text box, enter phone number")
     public void testVisitWebSite(){
         webDriver=new EdgeDriver();
         webDriver.get("https://www.canada411.ca/");
