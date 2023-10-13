@@ -17,7 +17,7 @@ public class CanadaPhoneNumberNotFoundTest {
     private WebDriver webDriver;
     private WebElement webElement;
 
-    @Given("Visit www.canada411.ca, Find people Phone number text box, enter non existing phone number \\\"(.*)\\\" ")
+    @Given("Visit www.canada411.ca, Find people Phone number text box, enter non existing phone number {string}")
     public void testVisitWebSite(String phoneNumber){
         webDriver=new EdgeDriver();
         webDriver.get("https://www.canada411.ca/");
